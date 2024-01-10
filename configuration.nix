@@ -27,14 +27,16 @@
   # \$ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    gcc
     wget
     vscode
     firefox
+    direnv
   ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  programs.direnv.enable = true;
+  # programs.direnv.enable = true;
 
 }
