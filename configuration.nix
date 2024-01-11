@@ -21,7 +21,7 @@
   services.xserver = {
     layout = "us";
     xkbVariant = "dvorak";
-    xkbOptions = "caps:ctrl_modifier,compose:ralt";
+    xkbOptions = "compose:ralt";
   };
 
   hardware.pulseaudio.enable = true;
@@ -51,6 +51,6 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # programs.direnv.enable = true;
+  # programs.direnv.enable = true; 
 
 }
