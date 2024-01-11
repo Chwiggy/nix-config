@@ -2,8 +2,7 @@
 
 {
   imports = [
-    <nixpkgs/nixos/modules/virtualisation/virtualbox-image.nix>
-    <nixpkgs/nixos/modules/installer/cd-dvd/channel.nix>
+    #should have just commented these out
    ];
 
   # Let demo build as a trusted user.
