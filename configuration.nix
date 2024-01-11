@@ -38,7 +38,6 @@
     firefox
     git
     glxinfo
-    qgis
     sl
     wget
     vscode
