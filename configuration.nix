@@ -28,6 +28,7 @@
   environment.systemPackages = with pkgs; [
     git
     gcc
+    sl
     wget
     vscode
     firefox
