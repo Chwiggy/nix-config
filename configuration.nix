@@ -16,10 +16,12 @@
   services.xserver = {
     enable = true;
     displayManager.sddm.enable = true;
+    displayManager.sddm.wayland.enable = true;
     desktopManager.plasma5.enable = true;
     displayManager.defaultSession = "plasmawayland";
   };
 
+  console.keyMap = "dvorak";
   services.xserver = {
     layout = "us";
     xkbVariant = "dvorak";
@@ -40,7 +42,9 @@
     glxinfo
     home-manager
     sl
+    sway
     wget
+    wayland
     vscode
   ];
 
