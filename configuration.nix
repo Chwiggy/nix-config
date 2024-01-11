@@ -21,7 +21,7 @@
   services.xserver = {
     layout = "us";
     xkbVariant = "dvorak";
-    xkbOptions = "compose:ralt";
+    xkbOptions = "caps:ctrl_modifier,compose:ralt";
   };
 
   hardware.pulseaudio.enable = true;
