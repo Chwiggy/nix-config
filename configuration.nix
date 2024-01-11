@@ -11,8 +11,12 @@
     };
   };
   
-  services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
+    displaymanager.defaultSession = "plasmawayland";
+  };
 
   services.xserver = {
     layout = "us";
@@ -20,21 +24,30 @@
     xkbOptions = "compose:ralt";
   };
 
+  hardware.pulseaudio.enable = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
   # List packages installed in system profile. To search, run:
   # \$ nix search wget
   environment.systemPackages = with pkgs; [
+    direnv
+    firefox
     git
-    gcc
+    glxinfo
     sl
     wget
     vscode
-    firefox
-    direnv
   ];
 
+  users.user.demo = {
+    isNormalUser = true;
+    description = "Demo user account";
+    extraGroups = ["wheel"];
+    password = "demo";
+    uid = 1000;
+  };
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
