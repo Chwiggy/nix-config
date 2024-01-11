@@ -2,7 +2,7 @@
 
 {
   imports = [
-    #should have just commented these out
+    <nixpkgs/nixos/modules/installer/virtualbox-demo.nix>
    ];
 
   # Let demo build as a trusted user.
@@ -17,7 +17,7 @@
     enable = true;
     displayManager.sddm.enable = true;
     desktopManager.plasma5.enable = true;
-    displaymanager.defaultSession = "plasmawayland";
+    displayManager.defaultSession = "plasmawayland";
   };
 
   services.xserver = {
@@ -38,15 +38,16 @@
     firefox
     git
     glxinfo
+    home-manager
     sl
     wget
     vscode
   ];
 
-  users.user.demo = {
+  users.users.demo = {
     isNormalUser = true;
     description = "Demo user account";
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "vboxsf"];
     password = "demo";
     uid = 1000;
   };
