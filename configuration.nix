@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ <nixpkgs/nixos/modules/installer/virtualbox-demo.nix> ];
+  imports = [
+    <nixpkgs/nixos/modules/virtualisation/virtualbox-image.nix>
+    <nixpkgs/nixos/modules/installer/cd-dvd/channel.nix>
+   ];
 
   # Let demo build as a trusted user.
   nix.settings.trusted-users = [ "demo" ];
