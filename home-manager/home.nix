@@ -7,24 +7,41 @@
   home.homeDirectory = "/home/lotte";
 
   # user packages
-  home.packages = [
-      pkgs.firefox
-      pkgs.kate
-      pkgs.vscode
+  home.packages = with pkgs; [
+      firefox
+      kate
+      direnv
 
       # messaging apps
-      pkgs.discord
-      pkgs.nheko
-      pkgs.signal-desktop
+      discord
+      nheko
+      signal-desktop
 
       # entertainment
-      pkgs.spotify
-      pkgs.freetube
+      spotify
+      freetube
       
       # work
-      pkgs.zotero
-      pkgs.onlyoffice-bin
+      zotero
+      onlyoffice-bin
   ];
+
+  # vscode
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode;
+    extensions = with pkgs.vscode-extensions; [
+      dracula-theme.theme-dracula
+      jnoortheen.nix-ide
+      arrterian.nix-env-selector
+      mkhl.direnv
+      github.vscode-pull-requests-github
+      ms-vscode-remote.remote.ssh
+      rust-lang.rust-analyzer
+      ms-toolsai.jupyter
+    ];
+  };
+
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
