@@ -23,6 +23,7 @@
       
       # work
       zotero
+      typst-lsp
       onlyoffice-bin
 
       #fonts
@@ -42,6 +43,7 @@
       ms-vscode-remote.remote-ssh
       rust-lang.rust-analyzer
       ms-toolsai.jupyter
+      nvarner.typst-lsp
     ];
   };
 
