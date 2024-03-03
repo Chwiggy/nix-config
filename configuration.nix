@@ -95,6 +95,7 @@
       kate
       vscode
 
+      #messaging apps
       discord
       nheko
       signal-desktop
