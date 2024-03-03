@@ -54,6 +54,11 @@
         defaultBranch = "main";
       };
     };
+    ignores = [
+      "*.direnv"
+      "*.vscode"
+      ".envrc"
+    ]
   };
 
 
