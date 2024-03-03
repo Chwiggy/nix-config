@@ -20,6 +20,9 @@
       # entertainment
       pkgs.spotify
       pkgs.freetube
+      
+      # work
+      pkgs.zotero
   ];
 
   # This value determines the Home Manager release that your
