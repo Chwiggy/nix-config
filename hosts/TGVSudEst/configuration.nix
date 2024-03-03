@@ -34,7 +34,7 @@
     LC_ADDRESS = "en_DK.UTF-8";
     LC_IDENTIFICATION = "en_DK.UTF-8";
     LC_MEASUREMENT = "en_DK.UTF-8";
-    LC_MONETARY = "en_DK.UTF-8";
+    LC_MONETARY = "de_DE.UTF-8";
     LC_NAME = "en_DK.UTF-8";
     LC_NUMERIC = "en_DK.UTF-8";
     LC_PAPER = "en_DK.UTF-8";
