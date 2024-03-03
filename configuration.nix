@@ -94,8 +94,10 @@
       firefox
       kate
       vscode
+
       discord
       nheko
+      signal-desktop
     ];
   };
 
