@@ -36,7 +36,7 @@
       arrterian.nix-env-selector
       mkhl.direnv
       github.vscode-pull-request-github
-      ms-vscode-remote.remote.ssh
+      ms-vscode-remote.remote-ssh
       rust-lang.rust-analyzer
       ms-toolsai.jupyter
     ];
