@@ -96,10 +96,14 @@
       kate
       vscode
 
-      #messaging apps
+      # messaging apps
       discord
       nheko
       signal-desktop
+
+      # entertainment
+      spotify
+      freetube
     ];
   };
 
