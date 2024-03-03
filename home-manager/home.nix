@@ -28,6 +28,7 @@
 
       #fonts
       atkinson-hyperlegible
+      crimson
   ];
 
   # vscode
