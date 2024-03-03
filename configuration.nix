@@ -45,6 +45,14 @@
     LC_TIME = "en_DK.UTF-8";
   };
 
+  # nix configurations
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -110,7 +118,7 @@
     ];
   };
 
-  
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
