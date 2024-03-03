@@ -60,9 +60,9 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "dvorak";
-    xkbOptions = "compose:ralt";
+    xkb.layout = "us";
+    xkb.variant = "dvorak";
+    xkb.options = "compose:ralt";
   };
 
   # Configure console keymap
