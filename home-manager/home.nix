@@ -35,7 +35,7 @@
       jnoortheen.nix-ide
       arrterian.nix-env-selector
       mkhl.direnv
-      github.vscode-pull-requests-github
+      github.vscode-pull-request-github
       ms-vscode-remote.remote.ssh
       rust-lang.rust-analyzer
       ms-toolsai.jupyter
