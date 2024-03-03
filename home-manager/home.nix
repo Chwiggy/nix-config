@@ -24,6 +24,9 @@
       # work
       zotero
       onlyoffice-bin
+
+      #fonts
+      atkinson-hyperlegible
   ];
 
   # vscode
