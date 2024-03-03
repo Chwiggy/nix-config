@@ -58,7 +58,7 @@
       "*.direnv"
       "*.vscode"
       ".envrc"
-    ]
+    ];
   };
 
 
