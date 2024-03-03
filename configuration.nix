@@ -95,6 +95,7 @@
       kate
       vscode
       discord
+      nheko
     ];
   };
 
@@ -107,6 +108,7 @@
     vim
     curl
     git
+    direnv
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
