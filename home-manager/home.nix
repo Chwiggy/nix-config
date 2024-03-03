@@ -23,7 +23,7 @@
       
       # work
       pkgs.zotero
-      pkgs.onlyoffice-desktopeditors
+      pkgs.onlyoffice-bin
   ];
 
   # This value determines the Home Manager release that your
