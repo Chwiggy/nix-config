@@ -102,6 +102,12 @@
     shell = pkgs.zsh;
   };
 
+  programs.zsh = {
+    enable = true;
+  };
+  # Enable completion of system packages by zsh
+  environment.pathsToLink = ["/share/zsh"];
+
 
 
   # Allow unfree packages
@@ -110,7 +116,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    zsh
     vim
     curl
     git
