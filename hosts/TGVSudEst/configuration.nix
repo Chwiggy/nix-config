@@ -99,20 +99,6 @@
     isNormalUser = true;
     description = "lotte";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      kate
-      vscode
-
-      # messaging apps
-      discord
-      nheko
-      signal-desktop
-
-      # entertainment
-      spotify
-      freetube
-    ];
   };
 
 
