@@ -98,10 +98,22 @@
       plugins = [
         "git"
         "colored-man-pages"
+        "branch"
+        "man"
+        "systemd"
+        "urltools"
         "themes"
         "pip"
         "pipenv"
         "python"
+        "history"
+        "history-substring-search"
+        "zsh-interactive-cd"
+        "isodate"
+        "jsontools"
+        "github"
+        "gitignore"
+        "rsync"
       ];
       theme = "jtriley";
     };
