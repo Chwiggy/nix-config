@@ -99,6 +99,7 @@
     isNormalUser = true;
     description = "lotte";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
 
 
