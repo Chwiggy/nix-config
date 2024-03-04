@@ -65,6 +65,10 @@
   };
 
   # ZSH config
+  programs.starship = {
+    enable = true;
+  };
+
   programs.zsh = {
     enable = true;
     plugins = [
@@ -94,7 +98,12 @@
       plugins = [
         "git"
         "colored-man-pages"
+        "themes"
+        "pip"
+        "pipenv"
+        "python"
       ];
+      theme = "jtriley";
     };
   };
 
