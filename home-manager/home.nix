@@ -67,13 +67,35 @@
   # ZSH config
   programs.zsh = {
     enable = true;
+    plugins = [
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.8.0";
+          sha256 = "sha256-Z6EYQdasvpl1P78poj9efnnLj7QQg13Me8x1Ryyw+dM=";
+        };
+      }
+    ];
+
+    
     enableCompletion = true;
     enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
 
     shellAliases.ll = "ls -l";
+    historySubstringSearch.enable = true;
     history.size = 10000;
-    history.path = "$(config.xdg.dataHome)/zsh/history";
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "colored-man-pages"
+      ];
+    };
   };
 
   # Nicely reload system units when changing configs
