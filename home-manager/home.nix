@@ -25,6 +25,7 @@
       zotero
       typst-lsp
       onlyoffice-bin
+      libreoffice
       qgis
 
       #fonts
