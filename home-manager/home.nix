@@ -24,7 +24,7 @@
       # work
       zotero
       typst-lsp
-      onlyoffice-bin
+      # onlyoffice-bin
       libreoffice
       qgis
 
