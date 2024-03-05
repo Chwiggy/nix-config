@@ -25,6 +25,7 @@
       zotero
       typst-lsp
       onlyoffice-bin
+      qgis
 
       #fonts
       atkinson-hyperlegible
