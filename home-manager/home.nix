@@ -31,6 +31,7 @@
       #fonts
       atkinson-hyperlegible
       crimson
+      nerdfonts
   ];
 
   # vscode
