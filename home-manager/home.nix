@@ -23,6 +23,7 @@
       
       # work
       zotero
+      typst
       typst-lsp
       # onlyoffice-bin
       libreoffice
