@@ -20,7 +20,8 @@
       # entertainment
       spotify
       freetube
-      
+      openttd-jgrpp
+
       # work
       zotero
       typst
