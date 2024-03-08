@@ -20,6 +20,7 @@
       # entertainment
       spotify
       freetube
+      steam
       
       # work
       zotero
