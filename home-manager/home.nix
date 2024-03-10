@@ -21,6 +21,7 @@
       spotify
       freetube
       openttd-jgrpp
+      vlc
 
       # work
       zotero
