@@ -9,7 +9,7 @@
   # user packages
   home.packages = with pkgs; [
       firefox
-      kate
+      # kate
       direnv
 
       # messaging apps
