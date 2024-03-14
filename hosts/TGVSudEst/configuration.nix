@@ -24,7 +24,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.networking.plugins = [ NetworkManager-anyconnect ];
+  # well this ain't working:
+  # networking.networking.plugins = [ NetworkManager-anyconnect ];
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
