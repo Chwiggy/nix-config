@@ -24,8 +24,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  # well this ain't working:
-  #networking.networking.plugins = [ openconnect ];
+  
+  # vpn setup
+  networking.networkmanager.plugins = [ openconnect ];
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
