@@ -8,9 +8,16 @@
 
   # user packages
   home.packages = with pkgs; [
+      #browsing
       firefox
-      # kate
+      
+      # development tools
       direnv
+      
+      # TODO add the following packages and config for them
+      # zellij
+      # helix
+      # zoxide
 
       # messaging apps
       discord
