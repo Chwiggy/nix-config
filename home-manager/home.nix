@@ -40,7 +40,7 @@
   # vscode
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package = pkgs.vscode;
     extensions = with pkgs.vscode-extensions; [
       dracula-theme.theme-dracula
       jnoortheen.nix-ide
