@@ -30,7 +30,7 @@
       # onlyoffice-bin
       libreoffice
       qgis
-      openvpn
+      # openvpn
 
       #fonts
       atkinson-hyperlegible
