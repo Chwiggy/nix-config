@@ -19,6 +19,8 @@
       # helix
       # zoxide
 
+      # TODO art programs
+
       # messaging apps
       discord
       nheko
@@ -115,6 +117,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
+        # TODO sort
         "git"
         "colored-man-pages"
         "branch"
