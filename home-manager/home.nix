@@ -16,7 +16,7 @@
       
       # TODO add the following packages and config for them
       # zellij
-      # helix
+      helix
       # zoxide
 
       # art programs
