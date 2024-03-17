@@ -19,7 +19,11 @@
       # helix
       # zoxide
 
-      # TODO art programs
+      # art programs
+      krita
+      inkscape
+      scribus
+      # TODO affinity-crimes
 
       # messaging apps
       discord
