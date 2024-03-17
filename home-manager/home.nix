@@ -121,24 +121,23 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-        # TODO sort
-        "git"
-        "colored-man-pages"
         "branch"
+        "colored-man-pages"
+        "git"
+        "github"
+        "gitignore"
+        "history"
+        "history-substring-search"
+        "isodate"
+        "jsontools"
         "man"
-        "systemd"
-        "urltools"
-        "themes"
         "pip"
         "pipenv"
         "python"
-        "history"
-        "history-substring-search"
+        "systemd"
+        "themes"
+        "urltools"
         "zsh-interactive-cd"
-        "isodate"
-        "jsontools"
-        "github"
-        "gitignore"
         "rsync"
       ];
       theme = "jtriley";
