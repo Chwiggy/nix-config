@@ -24,6 +24,7 @@
       inkscape
       scribus
       # TODO affinity-crimes
+      wine
 
       # messaging apps
       discord
