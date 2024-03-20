@@ -45,6 +45,9 @@
       libreoffice
       qgis
 
+      #wiki
+      obsidian
+
       #fonts
       atkinson-hyperlegible
       crimson
