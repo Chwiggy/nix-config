@@ -44,6 +44,7 @@
       # onlyoffice-bin
       libreoffice
       qgis
+      thunderbird
 
       #fonts
       atkinson-hyperlegible
