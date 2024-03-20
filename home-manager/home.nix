@@ -53,6 +53,10 @@
       nerdfonts
   ];
 
+  # silly things for Exchange Emails without webmail
+  services.gnome-keyring.enable = true;
+  programs.gpg.mutableKeys =true;
+
   # vscode
   programs.vscode = {
     enable = true;
