@@ -44,8 +44,6 @@
       # onlyoffice-bin
       libreoffice
       qgis
-      # gdi microsoft exchange
-      mailspring
 
       #fonts
       atkinson-hyperlegible
@@ -53,9 +51,6 @@
       nerdfonts
   ];
 
-  # silly things for Exchange Emails without webmail
-  services.gnome-keyring.enable = true;
-  programs.gpg.mutableKeys =true;
 
   # vscode
   programs.vscode = {
