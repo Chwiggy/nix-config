@@ -44,7 +44,8 @@
       # onlyoffice-bin
       libreoffice
       qgis
-      thunderbird
+      # gdi microsoft exchange
+      mailspring
 
       #fonts
       atkinson-hyperlegible
