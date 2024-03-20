@@ -128,7 +128,7 @@
   ];
 
   # silly things for Exchange Emails without webmail
-  services.gnome3.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # Steam setup
   programs.steam = {
