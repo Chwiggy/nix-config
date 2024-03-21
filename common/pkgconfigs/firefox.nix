@@ -51,7 +51,6 @@
         SponsoredSuggestions = false;
         ImproveSuggest = false;
       };
-      # TODO: switch to ManagedBookmarks as this will be dropped at some point https://mozilla.github.io/policy-templates/#managedbookmarks
     };
   };
 }
