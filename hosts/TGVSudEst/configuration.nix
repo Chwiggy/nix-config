@@ -98,7 +98,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lotte = {
     isNormalUser = true;
-    description = "lotte";
+    description = "Lotte";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
