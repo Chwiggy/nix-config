@@ -8,8 +8,8 @@
 
   # user packages
   home.packages = with pkgs; [
-      #browsing
-      firefox
+      # browsing
+      # firefox
       
       # development tools
       direnv
