@@ -13,9 +13,9 @@
       kate
       
       # TODO add the following packages and config for them
-      # zellij
+      #zellij
       helix
-      # zoxide
+      #zoxide
 
       # art programs
       krita
@@ -39,14 +39,14 @@
       zotero
       typst
       typst-lsp
-      # onlyoffice-bin
+      #onlyoffice-bin
       libreoffice
       qgis
 
-      #wiki
+      # wiki
       obsidian
 
-      #fonts
+      # fonts
       atkinson-hyperlegible
       crimson
       nerdfonts
