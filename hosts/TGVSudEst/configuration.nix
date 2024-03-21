@@ -124,7 +124,7 @@
     vim
     curl
     wayland
-    networkmanager-openconnect
+    networkmanager-openconnect # does this need to be here?
   ];
 
 
