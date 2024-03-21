@@ -13,6 +13,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/TGVSudEst/configuration.nix
+          ./common
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
