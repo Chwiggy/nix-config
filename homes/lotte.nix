@@ -37,9 +37,9 @@
 
       # work
       zotero
-      #onlyoffice-bin
       libreoffice
       qgis
+      networkmanager-openconnect
 
       # wiki
       obsidian
