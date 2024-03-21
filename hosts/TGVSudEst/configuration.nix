@@ -117,12 +117,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # TODO sort and add container engine
+    # TODO sort and cross reference with homes
+    # TODO add container engine
+    git
     fzf
     vim
     curl
-    git
-    direnv
     wayland
     networkmanager-openconnect
   ];

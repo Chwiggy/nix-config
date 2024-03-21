@@ -7,12 +7,10 @@
   home.homeDirectory = "/home/lotte";
 
   # user packages
-  home.packages = with pkgs; [
-      # browsing
-      # firefox
-      
+  home.packages = with pkgs; [      
       # development tools
       direnv
+      kate
       
       # TODO add the following packages and config for them
       # zellij
