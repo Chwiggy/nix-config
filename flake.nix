@@ -9,6 +9,7 @@
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
+      # I want more computers to install nix on
       TGVSudEst = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
