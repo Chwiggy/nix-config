@@ -138,14 +138,6 @@
 
   hardware.opengl.driSupport32Bit = true;
 
-  # vpn setup
-  # networking.openconnect.interfaces = {
-  #  university = {
-  #    gateway = "vpn-ac.urz.uni-heidelberg.de";
-  #    protocol = "anyconnect";
-  #  };
-  # };
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
