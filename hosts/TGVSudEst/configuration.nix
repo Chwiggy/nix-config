@@ -46,9 +46,17 @@
   # nix configurations
   nix = {
     package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+    #extraOptions = ''
+    #  experimental-features = nix-command flakes
+    #'';
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+    
+    settings.experimental-features = "nix-command flakes";
+    settings.auto-optimise-store = true;
   };
 
   # Enable the X11 windowing system.
