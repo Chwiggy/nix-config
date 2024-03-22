@@ -12,7 +12,7 @@
     plasma-manager.inputs.home-manager.follows = "home-manager";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, plasma-manager, ... }: {
     nixosConfigurations = {
       # I want more computers to install nix on
       TGVSudEst = nixpkgs.lib.nixosSystem {
