@@ -871,7 +871,7 @@
       "plasma-localerc"."Formats"."LC_TELEPHONE" = "de_DE.UTF-8";
       "plasma-localerc"."Formats"."LC_TIME" = "en_DK.UTF-8";
       "plasmanotifyrc"."Notifications"."PopupPosition" = "TopCenter";
-      "plasmarc"."Wallpapers"."usersWallpapers" = "/home/lotte/Pictures/Artprojects/2023-04-08_LKABMinetrain_small.png";
+      "plasmarc"."Wallpapers"."usersWallpapers" = "/home/lotte/.wallpaper/wallpaper.png";
       "systemsettingsrc"."KFileDialog Settings"."detailViewIconSize" = 16;
       "systemsettingsrc"."KFileDialog Settings"."iconViewIconSize" = 64;
     };

@@ -55,10 +55,14 @@
       nerdfonts
   ];
 
-  # plasma desktop settings not in ./common/plasma-desktop
-  #home.file = {
-  #  
-  #};
+  # adding wallpaper
+  home.file = {
+    "wallpaper" = {
+      enable = true;
+      source = "./common/wallpaper.png";
+      target = ".wallpaper/wallpaper.png";
+    };
+  };
 
 
   # vscode
