@@ -59,7 +59,7 @@
   home.file = {
     "wallpaper" = {
       enable = true;
-      source = "./common/wallpaper.png";
+      source = ./common/wallpaper.png;
       target = ".wallpaper/wallpaper.png";
     };
   };
