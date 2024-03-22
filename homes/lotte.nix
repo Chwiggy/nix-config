@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./common/plasma-desktop
+  ];
+  
+  
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "lotte";
@@ -49,6 +54,11 @@
       crimson
       nerdfonts
   ];
+
+  # plasma desktop settings not in ./common/plasma-desktop
+  #home.file = {
+  #  
+  #};
 
 
   # vscode

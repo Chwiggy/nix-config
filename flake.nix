@@ -5,6 +5,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Managing KDE Plasma hopefully
+    plasma-manager.url = "github:pjones/plasma-manager";
+    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
+    plasma-manager.inputs.home-manager.follows = "home-manager";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
@@ -19,6 +24,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
             home-manager.users.lotte = import ./homes/lotte.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
