@@ -20,6 +20,7 @@
         modules = [
           ./hosts/TGVSudEst/configuration.nix
           ./common
+          ./homes/common/plasma-desktop
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
