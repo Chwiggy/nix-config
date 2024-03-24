@@ -72,6 +72,9 @@
       customISO = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
+
           ./nixos/hosts/customISO/configuration.nix
           # ./common
           home-manager.nixosModules.home-manager
