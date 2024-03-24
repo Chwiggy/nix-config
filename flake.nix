@@ -18,8 +18,8 @@
       TGVSudEst = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/TGVSudEst/configuration.nix
-          ./common
+          ./nixos/hosts/TGVSudEst/configuration.nix
+          # ./common
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -29,6 +29,21 @@
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
+          }
+        ];
+      };
+      customISO = nixpkgs.lib.nixos {
+        system = "x86_64-linux";
+        modules = [
+          # ISO things
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
+
+          ./nixos/hosts/customIso/configuration.nix
+          # ./common/
+          home.manager.nixosModules.home-manager
+          {
+            home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
           }
         ];
       };
