@@ -33,7 +33,7 @@
   networking.networkmanager.enable = true;
 
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
-
+  boot.supportedFilesystems = lib.mkForce ["bcachefs" "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs"];
 
   
   # This value determines the NixOS release from which the default
