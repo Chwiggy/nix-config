@@ -29,13 +29,13 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lotte = {
     isNormalUser = true;
+    initialPassword = "1235";
     description = "Lotte";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "sudo" "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
   
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+
 
   # Shell settings
   programs.zsh = {
