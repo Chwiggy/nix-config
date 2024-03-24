@@ -128,10 +128,11 @@
   environment.systemPackages = with pkgs; [
     # TODO sort and cross reference with homes
     # TODO add container engine
-    git
-    fzf
-    vim
     curl
+    fzf
+    git
+    htop
+    vim
     wayland
   ];
 
