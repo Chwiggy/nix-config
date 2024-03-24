@@ -8,8 +8,6 @@
   ...
 }: {
   imports = [
-    #inputs.home-manager.nixosModules.home-manager
-
     # Import shared settings
     ../../common
   ];
