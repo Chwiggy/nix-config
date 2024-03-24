@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./input
+    ./locale
     ./pkgconfigs
   ];
 }
