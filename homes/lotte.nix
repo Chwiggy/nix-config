@@ -64,6 +64,12 @@
     };
   };
 
+  # Services
+  services.autoclean-downloads = {
+    enable = true;
+    age = 14;
+  };
+
 
   # vscode
   programs.vscode = {

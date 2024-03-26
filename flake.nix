@@ -60,7 +60,11 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
+            home-manager.sharedModules = [
+              inputs.plasma-manager.homeManagerModules.plasma-manager
+              outputs.homeManagerModules
+            
+            ];
             home-manager.users.lotte = import ./homes/lotte.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
@@ -81,7 +85,10 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
+            home-manager.sharedModules = [
+              inputs.plasma-manager.homeManagerModules.plasma-manager
+              outputs.homeManagerModules
+            ];
             home-manager.users.lotte = import ./homes/lotte.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
