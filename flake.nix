@@ -35,7 +35,7 @@
     packages = forAllSystems (system: nixpkgs.legacyPackages.${system});
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
-    #formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     # Reusable nixos modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
