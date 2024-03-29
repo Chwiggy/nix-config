@@ -31,7 +31,8 @@
       wine
 
       # messaging apps
-      discord
+      #discord
+      webcord
       nheko
       signal-desktop
 
