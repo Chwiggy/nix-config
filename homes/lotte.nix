@@ -26,6 +26,7 @@
       krita
       inkscape
       scribus
+      gimp
       # TODO affinity-crimes
       wine
 
