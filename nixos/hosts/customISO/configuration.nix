@@ -12,6 +12,7 @@
     ../../common
   ];
 
+  boot.loader.systemd-boot.enable = true;
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = false;
   networking.domain = "";
