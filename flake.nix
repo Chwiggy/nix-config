@@ -5,8 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Disko for declaratively setting disk formatting
-    #disko.url = "github:nix-community/disko";
-    #disko.inputs.nixpkgs.follows = "nixpkgs";
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
 
 
     home-manager.url = "github:nix-community/home-manager";
@@ -23,6 +23,7 @@
     nixpkgs,
     home-manager,
     plasma-manager,
+    disko,
     ... } @inputs: let 
     inherit (self) outputs;
 
@@ -61,7 +62,7 @@
         system = "x86_64-linux";
         modules = [
           ./nixos/hosts/TGVSudEst/configuration.nix
-          #disko.nixosModules.disko
+          disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

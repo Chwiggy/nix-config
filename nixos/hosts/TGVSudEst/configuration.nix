@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       # Import shared settings
       ../../common
-      #../../../disko/TGVSudEst
+      ../../../disko/TGVSudEst
     ];
 
   # Bootloader.
