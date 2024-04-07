@@ -46,6 +46,7 @@
       zotero
       libreoffice
       qgis
+      #gdal
       networkmanager-openconnect
 
       # wiki
