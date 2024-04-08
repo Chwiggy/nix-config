@@ -12,6 +12,7 @@
   home.username = "lotte";
   home.homeDirectory = "/home/lotte";
 
+
   # user packages
   home.packages = with pkgs; [      
       # development tools
@@ -59,6 +60,7 @@
       nerdfonts
   ];
 
+
   # adding wallpaper
   home.file = {
     "wallpaper" = {
@@ -68,14 +70,13 @@
     };
   };
 
-  # Services
+
+  # systemd services from nixos modules
   services.autoclean-downloads = {
     enable = true;
     age = 14;
   };
 
-
-  # vscode
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
@@ -89,6 +90,7 @@
       rust-lang.rust-analyzer
       ms-toolsai.jupyter
       nvarner.typst-lsp
+      tomoki1207.pdf
     ];
   };
 
@@ -108,12 +110,12 @@
     ];
   };
 
-
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
     enableZshIntegration = true;
   };
+
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
