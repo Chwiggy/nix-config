@@ -19,7 +19,7 @@
       direnv
       kate
       
-      # TODO add the following packages and config for them
+      # shell stuff
       zellij
       helix
       zoxide
@@ -30,7 +30,7 @@
       scribus
       gimp
       # TODO affinity-crimes
-      wine
+      #wine
 
       # messaging apps
       #discord
@@ -48,7 +48,6 @@
       zotero
       libreoffice
       qgis
-      #gdal
       networkmanager-openconnect
 
       # wiki
