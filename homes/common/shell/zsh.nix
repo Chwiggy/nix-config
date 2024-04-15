@@ -49,5 +49,10 @@
       ];
       theme = "jtriley";
     };
+
+    # stuff for zoxide
+    initExtra = ''
+      eval "$(zoxide init --cmd cd zsh)"
+    '';
   };
 }
