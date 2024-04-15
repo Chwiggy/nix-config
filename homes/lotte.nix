@@ -56,6 +56,7 @@
       # fonts
       atkinson-hyperlegible
       crimson
+      crimson-pro
       nerdfonts
 
       # utilities
