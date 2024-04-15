@@ -57,6 +57,9 @@
       atkinson-hyperlegible
       crimson
       nerdfonts
+
+      # utilities
+      unzip
   ];
 
 
