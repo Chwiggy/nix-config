@@ -89,7 +89,7 @@
       rust-lang.rust-analyzer
       ms-toolsai.jupyter
       nvarner.typst-lsp
-      #tomoki1207.pdf
+      tomoki1207.pdf
     ];
   };
 
