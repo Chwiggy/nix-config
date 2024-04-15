@@ -20,9 +20,9 @@
       kate
       
       # TODO add the following packages and config for them
-      #zellij
+      zellij
       helix
-      #zoxide
+      zoxide
 
       # art programs
       krita
@@ -85,12 +85,11 @@
       jnoortheen.nix-ide
       arrterian.nix-env-selector
       mkhl.direnv
-      github.vscode-pull-request-github
       ms-vscode-remote.remote-ssh
       rust-lang.rust-analyzer
       ms-toolsai.jupyter
       nvarner.typst-lsp
-      tomoki1207.pdf
+      #tomoki1207.pdf
     ];
   };
 
