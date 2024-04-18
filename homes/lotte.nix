@@ -57,7 +57,8 @@
       atkinson-hyperlegible
       crimson
       crimson-pro
-      nerdfonts
+      noto-fonts
+      #nerdfonts
 
       # utilities
       unzip
