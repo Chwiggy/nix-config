@@ -74,52 +74,55 @@
     };
   };
 
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscode;
-    extensions = with pkgs.vscode-extensions; [
-      dracula-theme.theme-dracula
-      jnoortheen.nix-ide
-      arrterian.nix-env-selector
-      mkhl.direnv
-      ms-vscode-remote.remote-ssh
-      rust-lang.rust-analyzer
-      ms-toolsai.jupyter
-      nvarner.typst-lsp
-      tomoki1207.pdf
-    ];
-  };
-
-  programs.git = {
-    enable = true;
-    userEmail = "emiilycwilke@gmail.com";
-    userName = "Chwiggy";
-    extraConfig = {
-      init = {
-        defaultBranch = "main";
-      };
+  programs = {
+    
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+      enableZshIntegration = true;
     };
-    ignores = [
-      "*.direnv"
-      "*.vscode"
-      ".envrc"
-    ];
-  };
 
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-    enableZshIntegration = true;
-  };
+    git = {
+      enable = true;
+      userEmail = "emiilycwilke@gmail.com";
+      userName = "Chwiggy";
+      extraConfig = {
+        init = {
+          defaultBranch = "main";
+        };
+      };
+      ignores = [
+        "*.direnv"
+        "*.vscode"
+        ".envrc"
+      ];
+    };
 
-  programs.zellij = {
-    # This autostarts zellij on zsh start
-    # TODO find specific settings for vscode to avoid
-    #enable = true;
-    enableZshIntegration = true;
-    settings.session_serialization = false;
-  };
+    vscode = {
+      enable = true;
+      package = pkgs.vscode;
+      extensions = with pkgs.vscode-extensions; [
+        dracula-theme.theme-dracula
+        jnoortheen.nix-ide
+        arrterian.nix-env-selector
+        mkhl.direnv
+        ms-vscode-remote.remote-ssh
+        rust-lang.rust-analyzer
+        ms-toolsai.jupyter
+        nvarner.typst-lsp
+        tomoki1207.pdf
+      ];
+    };
 
+    zellij = {
+      # This autostarts zellij on zsh start
+      # TODO find specific settings for vscode to avoid
+      #enable = true;
+      enableZshIntegration = true;
+      settings.session_serialization = false;
+    };
+  };
+  
   systemd.user = {
     # Nicely reload system units when changing configs
     startServices = "sd-switch";
