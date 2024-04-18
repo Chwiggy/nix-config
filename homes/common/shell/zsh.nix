@@ -1,5 +1,5 @@
 {
-  pkgs, ...
+  config, lib, pkgs, ...
 }: {
     programs.zsh = {
     enable = true;
@@ -28,28 +28,10 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-        "branch"
-        "colored-man-pages"
-        "git"
         "github"
-        "gitignore"
-        "history"
-        "history-substring-search"
         "isodate"
-        "jsontools"
-        "man"
-        "pip"
-        "pipenv"
-        "python"
-        "systemd"
-        "themes"
-        "urltools"
-        "zsh-interactive-cd"
-        "rsync"
       ];
-      theme = "jtriley";
     };
-
     # stuff for zoxide
     initExtra = ''
       eval "$(zoxide init --cmd cd zsh)"
