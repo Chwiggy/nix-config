@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./autoclean-downloads.nix
+    # add home manager modules here
   ];
 }

@@ -74,13 +74,6 @@
     };
   };
 
-
-  # systemd services from nixos modules
-  services.autoclean-downloads = {
-    enable = true;
-    age = 14;
-  };
-
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
@@ -120,15 +113,23 @@
   };
 
   programs.zellij = {
-    enable = true;
+    # This autostarts zellij on zsh start
+    # TODO find specific settings for vscode to avoid
+    #enable = true;
     enableZshIntegration = true;
     settings.session_serialization = false;
   };
 
-  
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
+  systemd.user = {
+    # Nicely reload system units when changing configs
+    startServices = "sd-switch";
+    # Auto clean folders
+    tmpfiles.rules = let home = config.home.homeDirectory; in [
+      # Autoclean ~/Downloads
+      "d ${home}/Downloads - - - 14d -"
+      "d ${home}/tmp - - - 3d -"
+    ];
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
