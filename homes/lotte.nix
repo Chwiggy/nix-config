@@ -119,7 +119,11 @@
     enableZshIntegration = true;
   };
 
-  programs.zellij.enableZshIntegration = true;
+  programs.zellij = {
+    enable = true;
+    enableZshIntegration = true;
+    settings.session_serialization = false;
+  };
 
   
   # Nicely reload system units when changing configs
