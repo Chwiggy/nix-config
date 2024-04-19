@@ -18,7 +18,11 @@
       # development tools
       direnv
       kate
-      
+
+      # language servers for helix
+      typst-lsp
+      python312Packages.python-lsp-server
+            
       # shell stuff
       zellij
       helix
