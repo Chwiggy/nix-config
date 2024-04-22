@@ -21,7 +21,7 @@
 
       # language servers for helix
       typst-lsp
-      python312Packages.python-lsp-server
+      python311Packages.python-lsp-server
             
       # shell stuff
       zellij
