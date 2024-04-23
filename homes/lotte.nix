@@ -33,6 +33,7 @@
       inkscape
       scribus
       gimp
+      wl-color-picker
       # TODO affinity-crimes
       #wine
 
