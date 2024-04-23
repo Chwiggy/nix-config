@@ -19,6 +19,7 @@
           };
           cursorline = true;
           bufferline = "always";
+          color-modes = true;
         };
       };
   };
