@@ -1,11 +1,13 @@
 {
-  config, lib, pkgs, ...
-
-}:{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # TODO dig into theme and settings
   programs.helix = {
     enable = true;
-     defaultEditor = true;
+    defaultEditor = true;
 
     settings = {
       theme = "dracula";
@@ -20,6 +22,62 @@
         cursorline = true;
         bufferline = "always";
         color-modes = true;
+      };
+    };
+    languages = {
+      language = [
+        {
+          name = "python";
+          language-id = "python";
+          auto-format = true;
+          file-types = ["py"];
+          language-servers = ["python-lsp"];
+          formatter = {
+            command = "ruff";
+            args = ["-q"];
+          };
+        }
+        {
+          name = "typst";
+          language-id = "typst";
+          auto-format = false;
+          file-types = ["typ"];
+          language-servers = ["typst-lsp"];
+        }
+        {
+          name = "rust";
+          language-id = "rust";
+          auto-format = true;
+          file-types = ["rs"];
+          roots = ["Cargo.lock"];
+          language-servers = ["rust-analyzer"];
+        }
+        {
+          name = "nix";
+          language-id = "nix";
+          auto-format = true;
+          file-types = ["nix"];
+          roots = ["flake.lock" "flake.nix"];
+          language-servers = ["nil"];
+          formatter = {
+            command = "nix";
+            args = ["fmt"];
+          };
+        }
+      ];
+      language-server = {
+        python-lsp = {
+          command = "pylsp";
+        };
+        typst-lsp = {
+          command = "typst-lsp";
+        };
+        rust-analyzer = {
+          command = "rust-analyzer";
+        };
+        nil = {
+          command = "nil";
+        };
       };
     };
     themes = {
@@ -50,7 +108,7 @@
 
         "string" = yellow;
         "string.regexp" = red;
-        
+
         "comment" = comment;
 
         "variable" = foreground;
@@ -62,27 +120,38 @@
           fg = orange;
           modifiers = ["italic"];
         };
-        
+
         "punctuation" = foreground;
         "punctuation.special" = pink;
 
         "keyword" = pink;
-        
+
         "operator" = pink;
 
         "function" = green;
-    
-        
+
         "tag" = pink;
 
-        "markup.heading" = { fg = purple; modifiers = ["bold"]; };
+        "markup.heading" = {
+          fg = purple;
+          modifiers = ["bold"];
+        };
         "markup.list" = cyan;
-        "markup.bold" = { fg = orange; modifiers = ["bold"]; };
-        "markup.italic" = { fg = yellow; modifiers = ["italic"]; };
-        "markup.link.url" = cyan; 
+        "markup.bold" = {
+          fg = orange;
+          modifiers = ["bold"];
+        };
+        "markup.italic" = {
+          fg = yellow;
+          modifiers = ["italic"];
+        };
+        "markup.link.url" = cyan;
         "markup.link.text" = pink;
         "markup.raw" = orange;
-        "markup.quote" = { fg = yellow; modifiers = ["italic"]; };
+        "markup.quote" = {
+          fg = yellow;
+          modifiers = ["italic"];
+        };
 
         "diff" = comment;
         "diff.plus" = green;
@@ -91,63 +160,140 @@
 
         # user interface
         "ui.background" = background;
-        
-        "ui.linenr" = { fg = comment; };
-        "ui.linenr.selected" = { fg = foreground; };
 
-        "ui.statusline" = { fg = foreground; bg = current-line; };
-        "ui.statusline.inactive" = { fg = comment; bg = background; };
-        "ui.statusline.normal" = { fg = background; bg = purple; modifiers = ["bold"];};
-        "ui.statusline.insert" = { fg = background; bg = green; modifiers = ["bold"];};
-        "ui.statusline.select" = { fg = background; bg = orange; modifiers = ["bold"];};
+        "ui.linenr" = {fg = comment;};
+        "ui.linenr.selected" = {fg = foreground;};
 
-        "ui.popup" = { fg = foreground; bg = current-line;};
-        "ui.window" = { fg = foreground; };
-        "ui.help" = { fg = foreground; bg = current-line; };
-        
-        "ui.bufferline" = { fg = "foreground"; bg = background; };
+        "ui.statusline" = {
+          fg = foreground;
+          bg = current-line;
+        };
+        "ui.statusline.inactive" = {
+          fg = comment;
+          bg = background;
+        };
+        "ui.statusline.normal" = {
+          fg = background;
+          bg = purple;
+          modifiers = ["bold"];
+        };
+        "ui.statusline.insert" = {
+          fg = background;
+          bg = green;
+          modifiers = ["bold"];
+        };
+        "ui.statusline.select" = {
+          fg = background;
+          bg = orange;
+          modifiers = ["bold"];
+        };
+
+        "ui.popup" = {
+          fg = foreground;
+          bg = current-line;
+        };
+        "ui.window" = {fg = foreground;};
+        "ui.help" = {
+          fg = foreground;
+          bg = current-line;
+        };
+
+        "ui.bufferline" = {
+          fg = "foreground";
+          bg = background;
+        };
         "ui.bufferline.active" = {
           fg = "cyan";
           background = current-line;
-          underline = { colour = cyan; style = "line";};
+          underline = {
+            colour = cyan;
+            style = "line";
+          };
         };
-        "ui.bufferline.background" = { bg = background; };
+        "ui.bufferline.background" = {bg = background;};
 
         "ui.text" = foreground;
-        "ui.text.focus" = { fg = foreground; bg = current-line; modifiers = ["bold"]; };
-        "ui.text.inactive" = { fg = comment; };
+        "ui.text.focus" = {
+          fg = foreground;
+          bg = current-line;
+          modifiers = ["bold"];
+        };
+        "ui.text.inactive" = {fg = comment;};
 
         "ui.virtual" = current-line;
-        "ui.virtual.ruler" = { bg = background; };
+        "ui.virtual.ruler" = {bg = background;};
         "ui.virtual.indent-guide" = background;
-        "ui.virtual.inlay-hint" = { fg = comment; bg = current-line; };
-        "ui.virtual.jump-label" = { fg = pink; modifiers = ["bold"]; };
+        "ui.virtual.inlay-hint" = {
+          fg = comment;
+          bg = current-line;
+        };
+        "ui.virtual.jump-label" = {
+          fg = pink;
+          modifiers = ["bold"];
+        };
 
-        "ui.selection" = {bg = current-line; };
+        "ui.selection" = {bg = current-line;};
 
-        "ui.cursor" = { fg = background; bg = foreground; };
-        "ui.cursor.primary" = { fg = background; bg = foreground; };
-        "ui.cursor.match" = { fg = pink; modifiers = ["bold"];};
-        "ui.cursor.primary.normal" = { fg = background; bg = purple; };
-        "ui.cursor.primary.insert" = { fg = background; bg = green; };
-        "ui.cursor.primary.select" = { fg = background; bg = orange; };
+        "ui.cursor" = {
+          fg = background;
+          bg = foreground;
+        };
+        "ui.cursor.primary" = {
+          fg = background;
+          bg = foreground;
+        };
+        "ui.cursor.match" = {
+          fg = pink;
+          modifiers = ["bold"];
+        };
+        "ui.cursor.primary.normal" = {
+          fg = background;
+          bg = purple;
+        };
+        "ui.cursor.primary.insert" = {
+          fg = background;
+          bg = green;
+        };
+        "ui.cursor.primary.select" = {
+          fg = background;
+          bg = orange;
+        };
 
-        "ui.cursorline.primary" = { bg = current-line; };
+        "ui.cursorline.primary" = {bg = current-line;};
 
-        "ui.menu" = { fg = foreground; bg = background; };
-        "ui.menu.selected" = { fg = foreground; bg = current-line; modifiers = ["bold"]; };
+        "ui.menu" = {
+          fg = foreground;
+          bg = background;
+        };
+        "ui.menu.selected" = {
+          fg = foreground;
+          bg = current-line;
+          modifiers = ["bold"];
+        };
 
         "diagnostic.error" = {
-          underline = { color = red; style = "curl"; };
+          underline = {
+            color = red;
+            style = "curl";
+          };
         };
         "diagnostic.warning" = {
-          underline = { color = orange; style = "curl"; };
+          underline = {
+            color = orange;
+            style = "curl";
+          };
         };
         "diagnostic.info" = {
-          underline = { color = yellow; style = "curl"; };
+          underline = {
+            color = yellow;
+            style = "curl";
+          };
         };
         "diagnostic.hint" = {
-          underline = { color = cyan; style = "curl"; };
+          underline = {
+            color = cyan;
+            style = "curl";
+          };
         };
 
         error = red;
@@ -157,5 +303,4 @@
       };
     };
   };
-  
 }
