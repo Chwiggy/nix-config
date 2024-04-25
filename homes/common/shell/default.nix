@@ -1,6 +1,11 @@
-{ config, lib, pkgs, inputs, outputs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
   imports = [
     ./zsh.nix
     ./starship.nix

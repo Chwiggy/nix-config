@@ -1,21 +1,19 @@
-{
-  lib, ...
-}:{
-    programs.starship = {
+{lib, ...}: {
+  programs.starship = {
     enable = true;
     settings = {
       add_newline = true;
       format = lib.concatStrings [
-          "$sudo"
-          "$all"
-        ];
+        "$sudo"
+        "$all"
+      ];
       character.success_symbol = "[➜](bold purple)";
       package.disabled = true;
       sudo = {
-          symbol = "witch ";
-          style = "bold blue";
-          format = "[$symbol]($style)";
-          disabled = false;
+        symbol = "witch ";
+        style = "bold blue";
+        format = "[$symbol]($style)";
+        disabled = false;
       };
       hostname = {
         ssh_only = false;
