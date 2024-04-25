@@ -1,74 +1,78 @@
-{ config, pkgs, plasma-manager, ... }:
-
 {
+  config,
+  pkgs,
+  plasma-manager,
+  ...
+}: {
   imports = [
     ./common/plasma-desktop
     ./common/shell
   ];
-  
-  
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "lotte";
   home.homeDirectory = "/home/lotte";
 
-
   # user packages
-  home.packages = with pkgs; [      
-      # development tools
-      direnv
-      kate
+  home.packages = with pkgs; [
+    # development tools
+    direnv
+    kate
+    ruff
 
-      # language servers for helix
-      typst-lsp
-      python311Packages.python-lsp-server
-            
-      # shell stuff
-      zellij
-      helix
-      zoxide
+    # language servers and debuggers for helix
+    typst-lsp
+    python311Packages.python-lsp-server
+    rust-analyzer
+    rocmPackages.llvm.lldb
+    nil
 
-      # art programs
-      krita
-      inkscape
-      scribus
-      gimp
-      wl-color-picker
-      # TODO affinity-crimes
-      #wine
+    # shell stuff
+    zellij
+    helix
+    zoxide
 
-      # messaging apps
-      #discord
-      webcord
-      nheko
-      signal-desktop
+    # art programs
+    krita
+    inkscape
+    scribus
+    gimp
+    wl-color-picker
+    # TODO affinity-crimes
+    #wine
 
-      # entertainment
-      spotify
-      freetube
-      openttd-jgrpp
-      vlc
+    # messaging apps
+    #discord
+    webcord
+    nheko
+    signal-desktop
 
-      # work
-      zotero
-      libreoffice
-      qgis
-      networkmanager-openconnect
+    # entertainment
+    spotify
+    freetube
+    openttd-jgrpp
+    vlc
 
-      # wiki
-      obsidian
+    # work
+    zotero
+    libreoffice
+    qgis
+    networkmanager-openconnect
 
-      # fonts
-      atkinson-hyperlegible
-      crimson
-      crimson-pro
-      noto-fonts
-      #nerdfonts
+    # wiki
+    obsidian
 
-      # utilities
-      unzip
+    # fonts
+    atkinson-hyperlegible
+    crimson
+    crimson-pro
+    noto-fonts
+    #nerdfonts
+
+    # utilities
+    unzip
   ];
-
 
   # adding wallpaper
   home.file = {
@@ -80,7 +84,6 @@
   };
 
   programs = {
-    
     direnv = {
       enable = true;
       nix-direnv.enable = true;
@@ -116,6 +119,7 @@
         ms-toolsai.jupyter
         nvarner.typst-lsp
         tomoki1207.pdf
+        kamadorueda.alejandra
       ];
     };
 
@@ -127,12 +131,14 @@
       settings.session_serialization = false;
     };
   };
-  
+
   systemd.user = {
     # Nicely reload system units when changing configs
     startServices = "sd-switch";
     # Auto clean folders
-    tmpfiles.rules = let home = config.home.homeDirectory; in [
+    tmpfiles.rules = let
+      home = config.home.homeDirectory;
+    in [
       # Autoclean ~/Downloads
       "d ${home}/Downloads - - - 14d -"
       "d ${home}/tmp - - - 3d -"

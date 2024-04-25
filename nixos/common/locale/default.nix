@@ -1,6 +1,11 @@
-{ inputs, outputs, config, lib, pkgs, ... }:
-
 {
+  inputs,
+  outputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
@@ -18,5 +23,4 @@
     LC_TELEPHONE = "en_DK.UTF-8";
     LC_TIME = "en_DK.UTF-8";
   };
-
 }

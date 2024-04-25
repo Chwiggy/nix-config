@@ -1,7 +1,9 @@
 # from https://gitlab.com/ada.loveless/nix/-/blob/devel/graphical/firefox.nix with changes
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.firefox = {
     enable = true;
     policies = {

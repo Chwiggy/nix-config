@@ -1,7 +1,10 @@
 {
-  config, lib, pkgs, ...
+  config,
+  lib,
+  pkgs,
+  ...
 }: {
-    programs.zsh = {
+  programs.zsh = {
     enable = true;
     plugins = [
       {
