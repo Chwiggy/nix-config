@@ -19,10 +19,14 @@
     # development tools
     direnv
     kate
+    ruff
 
-    # language servers for helix
+    # language servers and debuggers for helix
     typst-lsp
     python311Packages.python-lsp-server
+    rust-analyzer
+    rocmPackages.llvm.lldb
+    nil
 
     # shell stuff
     zellij
