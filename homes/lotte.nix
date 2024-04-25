@@ -126,10 +126,11 @@
     zellij = {
       # This autostarts zellij on zsh start
       # TODO find specific settings for vscode to avoid
-      # TODO this doesn't seem to work, mismatched ideas about what the config file is supposed to be?
       #enable = true;
       enableZshIntegration = true;
+
       settings = {
+        # TODO this doesn't seem to work, mismatched ideas about what the config file is supposed to be?
         session_serialization = false;
         theme = "catpuccin-mocha";
         themes.catpuccin-mocha = {
