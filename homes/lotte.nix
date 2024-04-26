@@ -124,6 +124,7 @@
         tomoki1207.pdf
         kamadorueda.alejandra
         catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
       ];
     };
   };
