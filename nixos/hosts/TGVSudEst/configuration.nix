@@ -64,7 +64,7 @@
     fzf
     git
     htop
-    vim
+    helix
     wayland
   ];
 
