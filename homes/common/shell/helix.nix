@@ -36,11 +36,7 @@
           language-id = "python";
           auto-format = true;
           file-types = ["py"];
-          language-servers = ["python-lsp"];
-          formatter = {
-            command = "ruff";
-            args = ["-q"];
-          };
+          language-servers = ["ruff-lsp"];
         }
         {
           name = "typst";
@@ -71,8 +67,8 @@
         }
       ];
       language-server = {
-        python-lsp = {
-          command = "pylsp";
+        ruff-lsp = {
+          command = "ruff-lsp";
         };
         typst-lsp = {
           command = "typst-lsp";

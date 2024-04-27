@@ -23,7 +23,7 @@
 
     # language servers and debuggers for helix
     typst-lsp
-    python311Packages.python-lsp-server
+    ruff-lsp
     rust-analyzer
     rocmPackages.llvm.lldb
     nil
