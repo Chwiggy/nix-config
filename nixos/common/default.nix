@@ -22,6 +22,7 @@
       dates = "weekly";
       options = "--delete-older-than 30d";
       randomizedDelaySec = "15min";
+      persistent = true;
     };
 
     settings.experimental-features = "nix-command flakes";
