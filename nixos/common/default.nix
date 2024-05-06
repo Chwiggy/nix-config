@@ -34,7 +34,7 @@
     isNormalUser = true;
     initialPassword = "1235";
     description = "Lotte";
-    extraGroups = ["sudo" "networkmanager" "wheel"];
+    extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd"];
     shell = pkgs.zsh;
   };
 
