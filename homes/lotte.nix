@@ -125,7 +125,7 @@
         kamadorueda.alejandra
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
-        ban.spellright
+        #ban.spellright
       ];
     };
   };
