@@ -73,17 +73,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # gdal workarounds
-  nixpkgs.overlays = let
-    workaroundBrokenHDF4 = self: super: {
-      hdf4 = super.gdal.overrideAttrs (o: {
-        doCheck = false;
-      });
-    };
-  in [
-    workaroundBrokenGdal
-  ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -95,6 +84,9 @@
     htop
     helix
     wayland
+    # gdal workarounds due to broken tests
+    # TODO remove these when possible
+    (gdal.overrideAttrs {doCheck = false;})
   ];
 
   # Steam setup
