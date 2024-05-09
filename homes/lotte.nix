@@ -20,6 +20,7 @@
     direnv
     kate
     ruff
+    nix-tree
 
     # language servers and debuggers for helix
     typst-lsp
