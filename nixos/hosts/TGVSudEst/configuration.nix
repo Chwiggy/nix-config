@@ -86,7 +86,7 @@
     wayland
     # gdal workarounds due to broken tests
     # TODO remove these when possible
-    (gdal.overrideAttrs {doCheck = false;})
+    #(gdal.overrideAttrs {doCheck = false;})
   ];
 
   # Steam setup
