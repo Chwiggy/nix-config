@@ -58,7 +58,7 @@
     # work
     zotero
     libreoffice
-    qgis
+    #qgis
     networkmanager-openconnect
 
     # wiki
