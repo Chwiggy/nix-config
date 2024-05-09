@@ -97,7 +97,7 @@
 
     git = {
       enable = true;
-      userEmail = "emiilycwilke@gmail.com";
+      userEmail = "emilycwilke@gmail.com";
       userName = "Chwiggy";
       extraConfig = {
         init = {
