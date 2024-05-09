@@ -19,7 +19,7 @@
   boot = {
     loader = {
       systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 3;
+      systemd-boot.configurationLimit = 5;
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
