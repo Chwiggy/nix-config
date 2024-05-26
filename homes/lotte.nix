@@ -81,7 +81,6 @@
       source = ./common/wallpaper.png;
       target = ".wallpaper/wallpaper.png";
     };
-    # TODO this seems to break home manager: find other way to set konsole theme
     "konsole-theme" = {
       source = ./common/plasma-desktop/Catppuccin-Macchiato.colorscheme;
       target = ".local/share/konsole/Catppuccin-Macchiato.colorscheme";
