@@ -69,6 +69,7 @@
     crimson
     crimson-pro
     noto-fonts
+    font-awesome
     #nerdfonts
 
     # utilities
