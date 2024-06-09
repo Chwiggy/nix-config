@@ -21,6 +21,7 @@
     kate
     ruff
     nix-tree
+    nix-diff
 
     # language servers and debuggers for helix
     typst-lsp
