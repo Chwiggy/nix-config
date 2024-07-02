@@ -45,7 +45,7 @@
     # Audio Setup
     pulseaudio.enable = false;
     # Necessary changes for steam
-    opengl.driSupport32Bit = true;
+    graphics.enable32Bit = true;
   };
 
   sound.enable = true;
