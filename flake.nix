@@ -12,9 +12,17 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Managing KDE Plasma hopefully
-    plasma-manager.url = "github:pjones/plasma-manager";
-    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
-    plasma-manager.inputs.home-manager.follows = "home-manager";
+    plasma-manager = {
+      url = "github:pjones/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
+    # Lix
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -23,6 +31,7 @@
     home-manager,
     plasma-manager,
     disko,
+    lix-module,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -61,6 +70,7 @@
         system = "x86_64-linux";
         modules = [
           ./nixos/hosts/TGVSudEst/configuration.nix
+          lix-module.nixosModules.default
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
@@ -85,6 +95,7 @@
           "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
 
           ./nixos/hosts/customISO/configuration.nix
+          lix-module.nixosModules.default
           # ./common
           home-manager.nixosModules.home-manager
           {
