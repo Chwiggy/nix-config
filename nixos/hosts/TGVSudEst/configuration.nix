@@ -48,8 +48,6 @@
     graphics.enable32Bit = true;
   };
 
-  sound.enable = true;
-
   security.rtkit.enable = true;
 
   # Allow unfree packages
