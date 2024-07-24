@@ -52,6 +52,7 @@
 
     # entertainment
     spotify
+    tidal-hifi
     freetube
     openttd-jgrpp
     vlc
@@ -108,7 +109,6 @@
       ignores = [
         "*.direnv"
         "*.vscode"
-        # ".envrc"
       ];
     };
 
