@@ -64,9 +64,7 @@
     htop
     helix
     wayland
-    # gdal workarounds due to broken tests
-    # TODO remove these when possible
-    #(gdal.overrideAttrs {doCheck = false;})
+    nix-output-monitor
   ];
 
   # Steam setup
