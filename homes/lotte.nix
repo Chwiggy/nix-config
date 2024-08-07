@@ -51,7 +51,6 @@
     signal-desktop
 
     # entertainment
-    spotify
     tidal-hifi
     freetube
     openttd-jgrpp
