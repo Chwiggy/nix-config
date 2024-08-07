@@ -53,18 +53,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # TODO sort and cross reference with homes
-    # TODO add container engine
-    curl
-    fzf
-    git
-    htop
-    helix
-    wayland
-    nix-output-monitor
+    # potential packages not in ../common/default.nix
   ];
 
   # Steam setup

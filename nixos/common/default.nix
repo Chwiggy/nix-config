@@ -29,6 +29,18 @@
     settings.auto-optimise-store = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    # TODO sort and cross reference with homes
+    # TODO add container engine
+    curl
+    fzf
+    git
+    htop
+    helix
+    wayland
+    nix-output-monitor
+  ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lotte = {
     isNormalUser = true;
