@@ -9,6 +9,7 @@
     ./input
     ./locale
     ./pkgconfigs
+    ./networks
   ];
 
   #nix configurations
