@@ -56,11 +56,11 @@
           root = {
             size = "100%FREE";
             content = {
-              type = "filesystem";
-              format = "bcachefs";
+              type = "btrfs";
+              extraArgs = ["-f"];
               mountpoint = "/";
               mountOptions = [
-                "defaults"
+                "noatime"
               ];
             };
           };
