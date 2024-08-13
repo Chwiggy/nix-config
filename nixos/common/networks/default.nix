@@ -28,5 +28,29 @@
         wep-key-flags = "1";
       };
     };
+    "eduroam (real)" = {
+      connection = {
+        id = "eduroam (real)";
+        permissions = "user:lotte:;";
+        type = "wifi";
+        uuid = "8303387c-9535-40ac-be73-4baca7f29e38";
+      };
+      ipv4 = {
+        method = "auto";
+      };
+      ipv6 = {
+        addr-gen-mode = "stable-privacy";
+        method = "auto";
+      };
+      proxy = {};
+      wifi = {
+        mode = "infrastructure";
+        ssid = "eduroam (real)";
+      };
+      wifi-security = {
+        key-mgmt = "wpa-psk";
+        psk-flags = "1";
+      };
+    };
   };
 }
