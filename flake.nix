@@ -23,6 +23,12 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      # optional, not necessary for the module
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -32,6 +38,7 @@
     plasma-manager,
     disko,
     lix-module,
+    sops-nix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -72,6 +79,7 @@
           ./nixos/hosts/TGVSudEst/configuration.nix
           lix-module.nixosModules.default
           disko.nixosModules.disko
+          sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -96,7 +104,7 @@
 
           ./nixos/hosts/customISO/configuration.nix
           lix-module.nixosModules.default
-          # ./common
+          sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
