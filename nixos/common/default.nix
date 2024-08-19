@@ -33,6 +33,7 @@
   environment.systemPackages = with pkgs; [
     # TODO sort and cross reference with homes
     # TODO add container engine
+    age
     curl
     fzf
     git

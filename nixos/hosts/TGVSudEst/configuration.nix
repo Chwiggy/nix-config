@@ -5,6 +5,7 @@
   config,
   pkgs,
   lib,
+  sops-nix,
   ...
 }: {
   imports = [
@@ -13,7 +14,20 @@
     # Import shared settings
     ../../common
     ../../../disko/TGVSudEst
+    <sops-nix/modules/sops>
   ];
+
+  sops = {
+    defaultSopsFile = ../../secrets/sops.yaml;
+    age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
+    # This is using an age key that is expected to already be in the filesystem
+    age.keyFile = "/var/lib/sops-nix/key.txt";
+    # This will generate a new key if the key specified above does not exist
+    age.generateKey = true;
+    # This is the actual specification of the secrets.
+    secrets.example-key = {};
+    secrets."myservice/my_subdir/my_secret" = {};
+  };
 
   # Bootloader.
   boot = {
