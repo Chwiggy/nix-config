@@ -51,7 +51,13 @@
   security.rtkit.enable = true;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    # TODO try again without in a few weeks
+    permittedInsecurePackages = [
+      "olm-3.2.16"
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     # potential packages not in ../common/default.nix
