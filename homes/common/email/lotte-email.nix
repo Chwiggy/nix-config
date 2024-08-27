@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [./default.nix];
+  # TODO ask work for email/network configs if applicable
   accounts.email.accounts = {
     HeiGit = {
       primary = true;
