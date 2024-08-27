@@ -7,7 +7,7 @@
   imports = [
     ./common/plasma-desktop
     ./common/shell
-    ./common/email.nix
+    ./common/email/lotte-email.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -64,7 +64,7 @@
     libreoffice
     qgis
     networkmanager-openconnect
-    thunderbird
+    # thunderbird
 
     # wiki
     obsidian
