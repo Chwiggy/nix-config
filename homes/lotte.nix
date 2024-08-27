@@ -25,9 +25,8 @@
     nix-diff
 
     # language servers and debuggers for helix
-    # TODO try again in a few days
     # TODO think about language server setup
-    # typst-lsp
+    typst-lsp
     ruff-lsp
     rust-analyzer
     rocmPackages.llvm.lldb
@@ -125,8 +124,7 @@
         ms-vscode-remote.remote-ssh
         rust-lang.rust-analyzer
         ms-toolsai.jupyter
-        # TODO try again in a few days
-        #nvarner.typst-lsp
+        nvarner.typst-lsp
         tomoki1207.pdf
         kamadorueda.alejandra
         catppuccin.catppuccin-vsc
