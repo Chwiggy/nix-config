@@ -80,6 +80,7 @@
               inputs.plasma-manager.homeManagerModules.plasma-manager
               outputs.homeManagerModules
             ];
+            # TODO maybe add work user profile
             home-manager.users.lotte = import ./homes/lotte.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
