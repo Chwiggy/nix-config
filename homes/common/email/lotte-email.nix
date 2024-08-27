@@ -6,32 +6,8 @@
 }: {
   imports = [./default.nix];
   accounts.email.accounts = {
-    gmail = {
-      primary = true;
-      thunderbird = {
-        enable = true;
-        perIdentitySettings = id: {
-          "mail.identity.id_${id}.reply_on_top" = 1;
-        };
-        realName = "Emily Charlotte Wilke";
-        address = "emilycwilke@gmail.com";
-        userName = "emilycwilke@gmail.com";
-        aerc = {
-          enable = true;
-          imapAuth = "xoauth2";
-        };
-        imap = {
-          host = "imap.gmail.com";
-          port = 993;
-        };
-        tls = {
-          enable = true;
-          useStartTls = false;
-        };
-      };
-    };
     HeiGit = {
-      primary = false;
+      primary = true;
       thunderbird = {
         enable = true;
         perIdentitySettings = id: {
