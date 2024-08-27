@@ -97,6 +97,12 @@
       # If you want to use JACK applications, uncomment this
       #jack.enable = true;
     };
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      nssmdns6 = false;
+      openFirewall = true;
+    };
   };
 
   # This value determines the NixOS release from which the default
