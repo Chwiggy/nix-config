@@ -56,6 +56,9 @@
     # potential packages not in ../common/default.nix
   ];
 
+  virtualisation.docker.enable = true;
+  virtualisation.docker.storageDriver = "btrfs";
+
   # Steam setup
   programs.steam = {
     enable = true;
