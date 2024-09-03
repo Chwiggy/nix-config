@@ -20,6 +20,24 @@
     enable = true;
   };
 
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.lotte = {
+    isNormalUser = true;
+    initialPassword = "1235";
+    description = "Lotte";
+    extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd"];
+    shell = pkgs.zsh;
+  };
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.emily = {
+    isNormalUser = true;
+    initialPassword = "1235";
+    description = "Emily C. Wilke";
+    extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd"];
+    shell = pkgs.zsh;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

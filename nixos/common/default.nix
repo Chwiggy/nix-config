@@ -10,6 +10,7 @@
     ./locale
     ./pkgconfigs
     ./networks
+    ./services
   ];
 
   #nix configurations
@@ -30,6 +31,29 @@
     settings.auto-optimise-store = true;
   };
 
+  # Bootloader.
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 3;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
+    # Excluding zfs so it builds on the latest linux kernel
+    supportedFilesystems = lib.mkForce ["bcachefs" "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs"];
+  };
+
+  hardware = {
+    # Enable bluetooth
+    bluetooth.enable = true;
+    # Audio Setup
+    pulseaudio.enable = false;
+    # Necessary changes for steam
+    graphics.enable32Bit = true;
+  };
+
+  security.rtkit.enable = true;
+
   environment.systemPackages = with pkgs; [
     # TODO sort and cross reference with homes
     # TODO add container engine
@@ -40,16 +64,8 @@
     helix
     wayland
     nix-output-monitor
+    vscode
   ];
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.lotte = {
-    isNormalUser = true;
-    initialPassword = "1235";
-    description = "Lotte";
-    extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd"];
-    shell = pkgs.zsh;
-  };
 
   # Shell settings
   programs.zsh = {

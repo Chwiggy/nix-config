@@ -12,20 +12,12 @@
     ./hardware-configuration.nix
     # Import shared settings
     ../../common
-    ../../../disko/TGVSudEst
+    ../../../disko/work_temp
   ];
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.lotte = {
-    isNormalUser = true;
-    initialPassword = "1235";
-    description = "Lotte";
-    extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd" "docker"];
-    shell = pkgs.zsh;
-  };
-
+  # TODO change networking name through out
   networking = {
-    hostName = "TGVSudEst"; # Define your hostname.
+    hostName = "work_temp"; # Define your hostname.
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
@@ -36,25 +28,18 @@
     networkmanager.enable = true;
   };
 
-  # Allow unfree packages
-  nixpkgs.config = {
-    allowUnfree = true;
-    # TODO try again without in a few weeks
-    permittedInsecurePackages = [
-      "olm-3.2.16"
-    ];
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.emily = {
+    isNormalUser = true;
+    initialPassword = "1235";
+    description = "Emily C. Wilke";
+    extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd" "docker"];
+    shell = pkgs.zsh;
   };
 
   environment.systemPackages = with pkgs; [
     # potential packages not in ../common/default.nix
   ];
-
-  # Steam setup
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -62,5 +47,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 }
