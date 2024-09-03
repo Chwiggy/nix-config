@@ -23,6 +23,13 @@
     extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd" "docker"];
     shell = pkgs.zsh;
   };
+  users.users.emily = {
+    isNormalUser = true;
+    initialPassword = "1235";
+    description = "Emily";
+    extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd" "docker"];
+    shell = pkgs.zsh;
+  };
 
   networking = {
     hostName = "TGVSudEst"; # Define your hostname.
