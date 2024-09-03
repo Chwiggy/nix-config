@@ -7,7 +7,8 @@
   imports = [
     ./common/plasma-desktop
     ./common/shell
-    ./common/email/lotte-email.nix
+    ./common/email
+    ./email/emily.nix
   ];
 
   # Home Manager needs a bit of information about you and the
