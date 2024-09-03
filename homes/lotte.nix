@@ -8,6 +8,7 @@
     ./common/plasma-desktop
     ./common/shell
     ./common/email
+    ./common/programs
     ./email/emily.nix
   ];
 
@@ -93,50 +94,6 @@
     };
   };
 
-  programs = {
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-      enableZshIntegration = true;
-    };
-
-    git = {
-      enable = true;
-      userEmail = "emilycwilke@gmail.com";
-      userName = "Chwiggy";
-      extraConfig = {
-        init = {
-          defaultBranch = "main";
-        };
-      };
-      ignores = [
-        "*.direnv"
-        "*.vscode"
-      ];
-    };
-
-    vscode = {
-      enable = true;
-      package = pkgs.vscode;
-      extensions = with pkgs.vscode-extensions; [
-        arrterian.nix-env-selector
-        catppuccin.catppuccin-vsc
-        catppuccin.catppuccin-vsc-icons
-        charliermarsh.ruff
-        jnoortheen.nix-ide
-        kamadorueda.alejandra
-        mechatroner.rainbow-csv
-        mkhl.direnv
-        ms-python.python
-        ms-python.debugpy
-        ms-toolsai.jupyter
-        ms-vscode-remote.remote-ssh
-        nvarner.typst-lsp
-        rust-lang.rust-analyzer
-        tomoki1207.pdf
-      ];
-    };
-  };
   systemd.user = {
     # Nicely reload system units when changing configs
     startServices = "sd-switch";
