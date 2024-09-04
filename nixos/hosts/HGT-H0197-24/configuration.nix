@@ -17,7 +17,7 @@
 
   # TODO change networking name through out
   networking = {
-    hostName = "work_temp"; # Define your hostname.
+    hostName = "HGT-H0197-24"; # Define your hostname.
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
