@@ -9,6 +9,7 @@
     ./common/shell
     ./common/email
     ./common/programs
+    ./common/packages
     ./email/emily.nix
   ];
 
@@ -38,15 +39,12 @@
     freetube
     openttd-jgrpp
     vlc
-
-    # wiki
-    obsidian
   ];
 
   # adding wallpaper
   home.file = {
     "wallpaper" = {
-      source = ./common/wallpaper.png;
+      source = ./wallpaper/lotte.png;
       target = ".wallpaper/wallpaper.png";
     };
     "konsole-theme" = {

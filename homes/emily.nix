@@ -9,6 +9,7 @@
     ./common/shell
     ./common/email
     ./common/programs
+    ./common/packages
     ./email/emily.nix
   ];
 
@@ -21,22 +22,12 @@
   home.packages = with pkgs; [
     # messaging apps
     rocketchat-desktop
-
-    # work
-    zotero
-    libreoffice
-    qgis
-    networkmanager-openconnect
-    # thunderbird
-
-    # wiki
-    obsidian
   ];
 
   # adding wallpaper
   home.file = {
     "wallpaper" = {
-      source = ./common/wallpaper.png;
+      source = ./wallpaper/emily.png;
       target = ".wallpaper/wallpaper.png";
     };
     "konsole-theme" = {
