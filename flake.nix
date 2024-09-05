@@ -115,7 +115,7 @@
       HGT-H0197-24 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./nixos/hosts/HGT-HO197-24/configuration.nix
+          ./nixos/hosts/HGT-H0197-24/configuration.nix
           lix-module.nixosModules.default
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
