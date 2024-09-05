@@ -23,50 +23,45 @@
               size = "100%";
               content = {
                 type = "luks";
-                name = "cryptroot";
+                name = "crypted";
                 extraOpenArgs = [];
                 settings = {
+                  # if you want to use the key for interactive login be sure there is no trailing newline
+                  # for example use `echo -n "password" > /tmp/secret.key`
+                  #keyFile = "/tmp/secret.key";
                   allowDiscards = true;
                 };
+                #additionalKeyFiles = ["/tmp/additionalSecret.key"];
                 content = {
-                  type = "btrfs";
-                  extraArgs = ["-L" "nixos" "-f"];
-                  subvolumes = {
-                    "/rootfs" = {
-                      mountpoint = "/";
-                      mountOptions = ["subvolume=root" "noatime"];
-                    };
-                    "/home" = {
-                      mountpoint = "/home";
-                      mountOptions = ["subvolume=home" "noatime"];
-                    };
-                  };
-                  "/home/user" = {};
-                  # Parent is not mounted so the mountpoint must be set
-
-                  "/nix" = {
-                    mountOptions = ["compress=zstd" "noatime"];
-                    mountpoint = "/nix";
-                  };
-                  "/swap" = {
-                    mountpoint = "/.swapvol";
-                    swap = {
-                      swapfile.size = "20M";
-                      swapfile2.size = "20M";
-                      swapfile2.path = "rel-path";
-                    };
-                  };
-                };
-                mountpoint = "/partition-root";
-                swap = {
-                  swapfile = {
-                    size = "20M";
-                  };
-                  swapfile1 = {
-                    size = "20M";
-                  };
+                  type = "lvm_pv";
+                  vg = "pool";
                 };
               };
+            };
+          };
+        };
+      };
+    };
+    lvm_vg = {
+      pool = {
+        type = "lvm_vg";
+        lvs = {
+          swap = {
+            size = "32G";
+            content = {
+              type = "swap";
+              resumeDevice = true; # resume from hiberation from this device
+            };
+          };
+          root = {
+            size = "100%FREE";
+            content = {
+              type = "btrfs";
+              extraArgs = ["-f"];
+              mountpoint = "/";
+              mountOptions = [
+                "noatime"
+              ];
             };
           };
         };
