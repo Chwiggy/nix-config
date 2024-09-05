@@ -9,6 +9,7 @@
 }: {
   imports = [
     # Import shared settings
+    ../../common/input
     ../../common/locale
     ../../common/networks
     ../../common/pkgconfigs

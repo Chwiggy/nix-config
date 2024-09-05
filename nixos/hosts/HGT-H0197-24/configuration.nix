@@ -12,7 +12,7 @@
     ./hardware-configuration.nix
     # Import shared settings
     ../../common
-    ../../../disko/work_temp
+    ../../../disko/HGT-H0197-24
   ];
   # Bootloader.
   boot = {
