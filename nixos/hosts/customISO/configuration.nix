@@ -9,7 +9,9 @@
 }: {
   imports = [
     # Import shared settings
-    ../../common
+    ../../common/locale
+    ../../common/networks
+    ../../common/pkgconfigs
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -40,6 +42,12 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    # TODO try again without in a few weeks
+    permittedInsecurePackages = [
+      "olm-3.2.16"
+    ];
+  };
 
   services.desktopManager.plasma6.enable = true;
 
@@ -48,6 +56,11 @@
     git
     zsh
   ];
+
+  # Shell settings
+  programs.zsh = {
+    enable = true;
+  };
 
   systemd.targets = {
     sleep.enable = false;

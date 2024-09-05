@@ -14,6 +14,17 @@
     ../../common
     ../../../disko/work_temp
   ];
+  # Bootloader.
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 3;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
+    # Excluding zfs so it builds on the latest linux kernel
+    supportedFilesystems = lib.mkForce ["bcachefs" "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs"];
+  };
 
   # TODO change networking name through out
   networking = {

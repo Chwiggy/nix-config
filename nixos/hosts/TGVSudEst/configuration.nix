@@ -15,6 +15,17 @@
     ../../../disko/TGVSudEst
   ];
 
+  # Bootloader.
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 3;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
+    # Excluding zfs so it builds on the latest linux kernel
+    supportedFilesystems = lib.mkForce ["bcachefs" "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs"];
+  };
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lotte = {
     isNormalUser = true;
