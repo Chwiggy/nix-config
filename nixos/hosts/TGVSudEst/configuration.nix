@@ -56,7 +56,6 @@
 
   # Allow unfree packages
   nixpkgs.config = {
-    allowUnfree = true;
     # TODO try again without in a few weeks
     permittedInsecurePackages = [
       "olm-3.2.16"

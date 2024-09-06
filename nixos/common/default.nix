@@ -55,6 +55,8 @@
     vscode
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   # Shell settings
   programs.zsh = {
     enable = true;
