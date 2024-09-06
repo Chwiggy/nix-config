@@ -17,10 +17,16 @@
   # Bootloader.
   boot = {
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot.enable = lib.mkForce false;
       systemd-boot.configurationLimit = 3;
       efi.canTouchEfiVariables = true;
     };
+
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
+    };
+
     kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
     # Excluding zfs so it builds on the latest linux kernel
     supportedFilesystems = lib.mkForce ["bcachefs" "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs"];
@@ -54,6 +60,7 @@
 
   environment.systemPackages = with pkgs; [
     # potential packages not in ../common/default.nix
+    sbctl
   ];
 
   # This value determines the NixOS release from which the default

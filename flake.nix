@@ -8,6 +8,9 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
+    lanzaboote.url = "github:nix-community/lanzaboote/v0.4.1";
+    lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -32,6 +35,7 @@
     plasma-manager,
     disko,
     lix-module,
+    lanzaboote,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -118,6 +122,7 @@
           ./nixos/hosts/HGT-H0197-24/configuration.nix
           lix-module.nixosModules.default
           disko.nixosModules.disko
+          lanzaboote.nixosModules.lanzaboote
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
