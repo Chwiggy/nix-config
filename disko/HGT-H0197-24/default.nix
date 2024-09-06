@@ -33,8 +33,34 @@
                 };
                 #additionalKeyFiles = ["/tmp/additionalSecret.key"];
                 content = {
-                  type = "lvm_pv";
-                  vg = "pool";
+                  type = "btrfs";
+                  extraArgs = ["-L" "nixos" "-f"];
+                  subvolumes = {
+                    "/root" = {
+                      mountpoint = "/";
+                      mountOptions = ["subvol=root" "noatime"];
+                    };
+                    "/home" = {
+                      mountpoint = "/home";
+                      mountOptions = ["subvol=home" "noatime"];
+                    };
+                    "/nix" = {
+                      mountpoint = "/nix";
+                      mountOptions = ["subvol=nix" "noatime"];
+                    };
+                    "/persist" = {
+                      mountpoint = "/persist";
+                      mountOptions = ["subvol=persist" "noatime"];
+                    };
+                    "/log" = {
+                      mountpoint = "/var/log";
+                      mountOptions = ["subvol=log" "noatime"];
+                    };
+                    "/swap" = {
+                      mountpoint = "/swap";
+                      swap.swapfile.size = "32G";
+                    };
+                  };
                 };
               };
             };
@@ -42,30 +68,7 @@
         };
       };
     };
-    lvm_vg = {
-      pool = {
-        type = "lvm_vg";
-        lvs = {
-          swap = {
-            size = "32G";
-            content = {
-              type = "swap";
-              resumeDevice = true; # resume from hiberation from this device
-            };
-          };
-          root = {
-            size = "100%FREE";
-            content = {
-              type = "btrfs";
-              extraArgs = ["-f"];
-              mountpoint = "/";
-              mountOptions = [
-                "noatime"
-              ];
-            };
-          };
-        };
-      };
-    };
   };
+  fileSystems."/persist".neededForBoot = true;
+  fileSystems."/var/log".neededForBoot = true;
 }
