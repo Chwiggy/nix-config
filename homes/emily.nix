@@ -49,7 +49,11 @@
     ];
   };
 
-  programs.git.ignores = ["*.envrc"];
+  programs.git = {
+    userEmail = "Emily.Wilke@heigit.org";
+    userName = "Emily C. Wilke";
+    ignores = ["*.envrc"];
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
