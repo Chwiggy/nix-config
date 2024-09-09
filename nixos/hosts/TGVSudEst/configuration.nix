@@ -31,14 +31,14 @@
     isNormalUser = true;
     initialPassword = "1235";
     description = "Lotte";
-    extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd" "docker"];
+    extraGroups = ["sudo" "networkmanager" "wheel"];
     shell = pkgs.zsh;
   };
   users.users.emily = {
     isNormalUser = true;
     initialPassword = "1235";
     description = "Emily";
-    extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd" "docker"];
+    extraGroups = ["sudo" "networkmanager" "wheel"];
     shell = pkgs.zsh;
   };
 
@@ -65,9 +65,6 @@
   environment.systemPackages = with pkgs; [
     # potential packages not in ../common/default.nix
   ];
-
-  virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "btrfs";
 
   # Steam setup
   programs.steam = {
