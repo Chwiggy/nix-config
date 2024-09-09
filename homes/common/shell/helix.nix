@@ -56,10 +56,11 @@
         {
           name = "nix";
           language-id = "nix";
-          auto-format = true;
+          auto-format = false;
           file-types = ["nix"];
           roots = ["flake.lock" "flake.nix"];
           language-servers = ["nil"];
+          # TODO how to get the auto-format to work
           formatter = {
             command = "nix";
             args = ["fmt"];
