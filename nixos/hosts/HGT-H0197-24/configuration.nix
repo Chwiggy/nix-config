@@ -46,8 +46,45 @@
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
     # Enable networking
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      ensureProfiles.profiles = {
+        KT-Gruppe = {
+          connection = {
+            id = "KT-Gruppe";
+            uuid = "08b1a4c0-94b4-4628-a37c-ad34744fd82";
+            type = "wifi";
+            permissions = "user:emily;";
+          };
+          wifi = {
+            hidden = "true";
+            mode = "infrastructure";
+            ssid = "KT-Gruppe";
+          };
+          "802-1x" = {
+            ca-cert = "/etc/ssl/certs/KTSV_R1.pem";
+            eap = "peap";
+            phase2-auth = "mschapv2";
+            identity = "ewilke";
+          };
+          proxy = {};
+          wifi-security = {
+            key-mgmt = "wpa-eap";
+          };
+          ipv4 = {
+            method = "auto";
+          };
+          ipv6 = {
+            addr-gen-mode = "stable-privacy";
+            method = "auto";
+          };
+        };
+      };
+    };
   };
+
+  #root-certificate for KTA WiFi
+  security.pki.certificateFiles = [./KTSV_R1.crt];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.emily = {
@@ -61,6 +98,7 @@
   environment.systemPackages = with pkgs; [
     # potential packages not in ../common/default.nix
     sbctl
+    cacert
   ];
 
   virtualisation.docker.enable = true;
