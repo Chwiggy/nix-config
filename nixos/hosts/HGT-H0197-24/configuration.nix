@@ -30,10 +30,10 @@
     kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
     # Excluding zfs so it builds on the latest linux kernel
     supportedFilesystems = lib.mkForce ["bcachefs" "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs"];
-    kernelParams = [
-      "resume_offset=533760"
-    ];
-    resumeDevice = "/dev/diks/by-label/nixos";
+    # kernelParams = [
+    #   "resume_offset=533760"
+    # ];
+    # resumeDevice = "/dev/diks/by-label/nixos";
   };
 
   # TODO change networking name through out
@@ -103,6 +103,10 @@
 
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
+
+  services.printing.drivers = [
+    (pkgs.writeTextDir "share/cups/model/KOC750iGX.ppd" (builtins.readFile ./KOC750iGX.ppd))
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
