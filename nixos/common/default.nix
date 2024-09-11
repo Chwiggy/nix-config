@@ -50,6 +50,8 @@
     git
     htop
     helix
+    tree
+    bat
     wayland
     nix-output-monitor
     vscode
