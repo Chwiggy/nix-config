@@ -100,11 +100,13 @@
     sbctl
     cacert
     networkmanager-openvpn
-    gnome.networkmanager-openvpn
   ];
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "btrfs";
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "btrfs";
+    liveRestore = false;
+  };
 
   services.printing.drivers = [
     (pkgs.writeTextDir "share/cups/model/KOC750iGX.ppd" (builtins.readFile ./KOC750iGX.ppd))

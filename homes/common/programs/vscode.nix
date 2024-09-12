@@ -16,6 +16,7 @@
       kamadorueda.alejandra
       mechatroner.rainbow-csv
       mkhl.direnv
+      ms-azuretools.vscode-docker
       ms-python.python
       ms-python.debugpy
       ms-toolsai.jupyter
