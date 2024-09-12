@@ -99,6 +99,8 @@
     # potential packages not in ../common/default.nix
     sbctl
     cacert
+    networkmanager-openvpn
+    gnome.networkmanager-openvpn
   ];
 
   virtualisation.docker.enable = true;
