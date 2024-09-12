@@ -85,7 +85,6 @@
               outputs.homeManagerModules
             ];
             home-manager.users.lotte = import ./homes/lotte.nix;
-            home-manager.users.emily = import ./homes/emily.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix

@@ -26,18 +26,12 @@
     # Excluding zfs so it builds on the latest linux kernel
     supportedFilesystems = lib.mkForce ["bcachefs" "btrfs" "cifs" "f2fs" "jfs" "ntfs" "reiserfs" "vfat" "xfs"];
   };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lotte = {
     isNormalUser = true;
     initialPassword = "1235";
     description = "Lotte";
-    extraGroups = ["sudo" "networkmanager" "wheel"];
-    shell = pkgs.zsh;
-  };
-  users.users.emily = {
-    isNormalUser = true;
-    initialPassword = "1235";
-    description = "Emily";
     extraGroups = ["sudo" "networkmanager" "wheel"];
     shell = pkgs.zsh;
   };
