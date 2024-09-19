@@ -55,6 +55,13 @@
     ignores = ["*.envrc"];
   };
 
+  programs.vscode = {
+    extensions = with pkgs.vscode-extensions; [
+      redhat.java
+      vscjava.vscode-java-pack
+    ];
+  };
+  
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
