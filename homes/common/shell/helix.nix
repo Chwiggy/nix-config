@@ -37,10 +37,10 @@
           language-id = "python";
           auto-format = true;
           file-types = ["py"];
-          language-servers = with pkgs; ["${ruff-lsp}/bin/ruff-lsp"];
+          language-servers = ["ruff-lsp"];
           formatter = {
             command = with pkgs; "${ruff}/bin/ruff";
-            args = ["format" "--line-lengths" "120" "-"];
+            args = ["format" "-"];
           };
         }
         {
@@ -64,7 +64,7 @@
           auto-format = true;
           file-types = ["nix"];
           roots = ["flake.lock" "flake.nix"];
-          language-servers = with pkgs; ["${nil}/bin/nil"];
+          language-servers = ["nil"];
           # TODO how to get the auto-format to work
           formatter = {
             command = with pkgs; "${alejandra}/bin/alejandra";
