@@ -12,6 +12,7 @@
     settings = {
       theme = "catppuccin_macchiato";
       editor = {
+        auto-format = true;
         line-number = "relative";
         lsp.display-messages = true;
         cursor-shape = {
@@ -36,7 +37,11 @@
           language-id = "python";
           auto-format = true;
           file-types = ["py"];
-          language-servers = ["ruff-lsp"];
+          language-servers = with pkgs; ["${ruff-lsp}/bin/ruff-lsp"];
+          formatter = {
+            command = with pkgs; "${ruff}/bin/ruff";
+            args = ["format" "--line-lengths" "120" "-"];
+          };
         }
         {
           name = "typst";
@@ -56,14 +61,15 @@
         {
           name = "nix";
           language-id = "nix";
-          auto-format = false;
+          auto-format = true;
           file-types = ["nix"];
           roots = ["flake.lock" "flake.nix"];
-          language-servers = ["nil"];
+          language-servers = with pkgs; ["${nil}/bin/nil"];
           # TODO how to get the auto-format to work
           formatter = {
-            command = "nix";
-            args = ["fmt"];
+            command = with pkgs; "${alejandra}/bin/alejandra";
+
+            # comment misaligned
           };
         }
       ];
