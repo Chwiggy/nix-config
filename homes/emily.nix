@@ -23,6 +23,9 @@
     # communication apps
     rocketchat-desktop
     zoom-us
+
+    # oh pycharm
+    jetbrains.pycharm-professional
   ];
 
   # adding wallpaper
