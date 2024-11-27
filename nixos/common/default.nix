@@ -65,7 +65,4 @@
   };
   # Enable completion of system packages by zsh
   environment.pathsToLink = ["/share/zsh"];
-
-  # fix for lix bug around nix-options
-  system.tools.nixos-option.enable = false;
 }
