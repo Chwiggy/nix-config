@@ -26,6 +26,7 @@
 
     # oh pycharm
     jetbrains.pycharm-professional
+    jetbrains.idea-ultimate
   ];
 
   # adding wallpaper
