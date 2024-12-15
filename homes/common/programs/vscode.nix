@@ -24,6 +24,7 @@
       nvarner.typst-lsp
       rust-lang.rust-analyzer
       tomoki1207.pdf
+      vadimcn.vscode-lldb
     ];
   };
 }
