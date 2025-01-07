@@ -27,6 +27,8 @@
     # oh pycharm
     jetbrains.pycharm-professional
     jetbrains.idea-ultimate
+    # why is your software so bad 🎶
+    jetbrains-toolbox
   ];
 
   # adding wallpaper
