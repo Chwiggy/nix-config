@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     # Disko for declaratively setting disk formatting
     disko.url = "github:nix-community/disko";
@@ -31,6 +32,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-stable,
     home-manager,
     plasma-manager,
     disko,
@@ -39,6 +41,7 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    inherit (inputs) nixpkgs-stable;
 
     # Supported systems for your flake packages, shell, etc.
     systems = [
@@ -47,6 +50,13 @@
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
+    pkgsStable = import nixpkgs-stable {
+      system = "x86_64-linux";
+      config = {
+        allowUnfree = true;
+        allowUnfreePredicate = _: true;
+      };
+    };
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -135,6 +145,7 @@
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
           }
+          {_module.args = {inherit pkgsStable;};}
         ];
       };
     };

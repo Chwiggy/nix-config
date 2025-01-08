@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  pkgsStable,
   lib,
   ...
 }: {
@@ -95,12 +96,17 @@
     shell = pkgs.zsh;
   };
 
-  environment.systemPackages = with pkgs; [
-    # potential packages not in ../common/default.nix
-    sbctl
-    cacert
-    networkmanager-openvpn
-  ];
+  environment.systemPackages =
+    (with pkgs; [
+      # potential packages not in ../common/default.nix
+      sbctl
+      cacert
+      networkmanager-openvpn
+    ])
+    ++ (with pkgsStable; [
+      # to revert docker compose version
+      docker-compose
+    ]);
 
   virtualisation.docker = {
     enable = true;

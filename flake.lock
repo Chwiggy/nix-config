@@ -265,6 +265,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable_2": {
+      "locked": {
+        "lastModified": 1736200483,
+        "narHash": "sha256-JO+lFN2HsCwSLMUWXHeOad6QUxOuwe9UOAF/iSl1J4I=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3f0a8ac25fb674611b98089ca3a5dd6480175751",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -322,6 +338,7 @@
         "lanzaboote": "lanzaboote",
         "lix-module": "lix-module",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-stable": "nixpkgs-stable_2",
         "plasma-manager": "plasma-manager"
       }
     },
