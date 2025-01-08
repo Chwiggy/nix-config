@@ -33,6 +33,8 @@
       # If you want to use JACK applications, uncomment this
       #jack.enable = true;
     };
+    pulseaudio.enable = false;
+
     avahi = {
       enable = true;
       nssmdns4 = true;

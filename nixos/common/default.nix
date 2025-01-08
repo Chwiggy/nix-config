@@ -34,8 +34,6 @@
   hardware = {
     # Enable bluetooth
     bluetooth.enable = true;
-    # Audio Setup
-    pulseaudio.enable = false;
     # Necessary changes for steam
     graphics.enable32Bit = true;
   };
