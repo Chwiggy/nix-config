@@ -104,9 +104,35 @@
       networkmanager-openvpn
     ])
     ++ (with pkgsStable; [
-      # to revert docker compose version
-      docker-compose
+      # packages from stable go here:
+      # docker-compose
     ]);
+
+  #package overlay for docker compose pinned to 2.31.0 due to https://github.com/docker/compose/issues/12436 breaking work infrastructure
+  nixpkgs.overlays = [
+    (final: prev: {
+      # credit to https://discourse.nixos.org/t/overlay-buildgomodule-overrideattrs-version-overrides/19973 for suggesting this idea, it's less clunky than the other idea I had on how to do this
+
+      docker-compose = prev.callPackage "${prev.path}/pkgs/applications/virtualization/docker/compose.nix" {
+        buildGoModule = args:
+          prev.buildGoModule (args
+            // rec {
+              version = "2.31.0";
+
+              src = prev.fetchFromGitHub {
+                owner = "docker";
+                repo = "compose";
+                rev = "v${version}";
+                hash = "sha256-L+RDO31LnQbWA22bkCrnU2QDF6+eCPwbPpzZxHGrZ1Q=";
+              };
+
+              vendorHash = "sha256-IbDr2cTGmJZM8G2cj35CwfEX+DWVD0L4pUxHBvu9EfI=";
+
+              ldflags = ["-X github.com/docker/compose/v2/internal.Version=${version}" "-s" "-w"];
+            });
+      };
+    })
+  ];
 
   virtualisation.docker = {
     enable = true;
