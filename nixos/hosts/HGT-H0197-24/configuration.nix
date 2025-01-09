@@ -140,6 +140,15 @@
     liveRestore = false;
   };
 
+  #open firewall for docker bridge network https://discourse.nixos.org/t/docker-container-not-resolving-to-host/30259/7
+  networking.firewall = {
+    enable = true;
+    extraCommands = ''
+      iptables -I INPUT 1 -s 172.16.0.0/12 -p tcp -d 172.17.0.1 -j ACCEPT
+      iptables -I INPUT 2 -s 172.16.0.0/12 -p udp -d 172.17.0.1 -j ACCEPT
+    '';
+  };
+
   services.printing.drivers = [
     (pkgs.writeTextDir "share/cups/model/KOC750iGX.ppd" (builtins.readFile ./KOC750iGX.ppd))
   ];
