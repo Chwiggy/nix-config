@@ -48,5 +48,6 @@
 
     # utilities
     unzip
+    inkscape
   ];
 }

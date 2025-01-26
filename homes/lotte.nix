@@ -22,7 +22,6 @@
   home.packages = with pkgs; [
     # art programs
     krita
-    inkscape
     scribus
     gimp
     wl-color-picker
