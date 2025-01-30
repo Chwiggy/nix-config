@@ -14,7 +14,7 @@
 
     # language servers and debuggers for helix
     # TODO think about language server setup
-    typst-lsp
+    tinymist
     ruff-lsp
     rust-analyzer
     rocmPackages.llvm.lldb

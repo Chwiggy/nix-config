@@ -21,7 +21,7 @@
       ms-python.debugpy
       ms-toolsai.jupyter
       ms-vscode-remote.remote-ssh
-      nvarner.typst-lsp
+      myriad-dreamin.tinymist
       rust-lang.rust-analyzer
       tomoki1207.pdf
       vadimcn.vscode-lldb
