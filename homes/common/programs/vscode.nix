@@ -7,24 +7,47 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
+    mutableExtensionsDir = false;
     extensions = with pkgs.vscode-extensions; [
-      arrterian.nix-env-selector
+      #theming
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
-      charliermarsh.ruff
+      mkhl.direnv
+
+      # nix world
+      arrterian.nix-env-selector
       jnoortheen.nix-ide
       kamadorueda.alejandra
-      mechatroner.rainbow-csv
-      mkhl.direnv
-      ms-azuretools.vscode-docker
+
+      # python world
+      charliermarsh.ruff
       ms-python.python
       ms-python.debugpy
       ms-toolsai.jupyter
+
+      #data world
+      mechatroner.rainbow-csv
+
+      # vscode stuff
+      ms-azuretools.vscode-docker
       ms-vscode-remote.remote-ssh
+
+      # typst world
       myriad-dreamin.tinymist
-      rust-lang.rust-analyzer
       tomoki1207.pdf
+
+      # rust world
+      rust-lang.rust-analyzer
       vadimcn.vscode-lldb
+
+      #Java World
+      redhat.java
+      vscjava.vscode-java-pack
+      vscjava.vscode-maven
+      vscjava.vscode-gradle
+      vscjava.vscode-java-test
+      vscjava.vscode-java-dependency
+      vscjava.vscode-java-debug
     ];
   };
 }
