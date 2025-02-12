@@ -4,6 +4,7 @@
   pkgs,
   ...
 }: {
+  # investigate if fhs environment makes this neater
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
@@ -38,7 +39,8 @@
 
       # rust world
       rust-lang.rust-analyzer
-      vadimcn.vscode-lldb
+      # TODO add again once https://nixpk.gs/pr-tracker.html?pr=380775 is through
+      # vadimcn.vscode-lldb
 
       #Java World
       redhat.java

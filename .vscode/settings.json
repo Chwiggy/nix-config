@@ -1,0 +1,7 @@
+{
+    "conventionalCommits.scopes": [
+        "deprecations",
+        "secure-boot",
+        "update"
+    ]
+}
