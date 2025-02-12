@@ -27,6 +27,11 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -38,6 +43,7 @@
     disko,
     lix-module,
     lanzaboote,
+    nix-vscode-extensions,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -145,7 +151,7 @@
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
           }
-          {_module.args = {inherit pkgsStable;};}
+          {_module.args = {inherit pkgsStable nix-vscode-extensions;};}
         ];
       };
     };

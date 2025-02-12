@@ -4,12 +4,11 @@
   pkgs,
   ...
 }: {
-  # investigate if fhs environment makes this neater
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
     mutableExtensionsDir = false;
-    extensions = with pkgs.vscode-extensions; [
+    extensions = with pkgs.vscode-marketplace; [
       #theming
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
@@ -43,7 +42,8 @@
       # vadimcn.vscode-lldb
 
       #Java World
-      redhat.java
+      # TODO why on earth is this broken
+      # redhat.java
       vscjava.vscode-java-pack
       vscjava.vscode-maven
       vscjava.vscode-gradle

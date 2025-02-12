@@ -6,6 +6,7 @@
   pkgs,
   pkgsStable,
   lib,
+  nix-vscode-extensions,
   ...
 }: {
   imports = [
@@ -137,6 +138,8 @@
         dontCheckForBrokenSymlinks = true;
       };
     })
+
+    nix-vscode-extensions.overlays.default
   ];
 
   virtualisation.docker = {
