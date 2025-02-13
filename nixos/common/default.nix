@@ -43,6 +43,7 @@
   environment.systemPackages = with pkgs; [
     # TODO sort and cross reference with homes
     # TODO add container engine
+    alejandra
     curl
     fzf
     git
@@ -53,6 +54,7 @@
     wayland
     nix-output-monitor
     vscode
+    kitty
   ];
 
   nixpkgs.config.allowUnfree = true;
