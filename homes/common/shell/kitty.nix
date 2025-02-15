@@ -4,7 +4,7 @@
     themeFile = "Catppuccin-Mocha";
     font = {
       name = "Atkinson Monolegible";
-      package = pkgs.atkinson-monolegible;
+      package = pkgs.atkinson-hyperlegible-mono;
       size = 11;
     };
     shellIntegration.enableZshIntegration = true;

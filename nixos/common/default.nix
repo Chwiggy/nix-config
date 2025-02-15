@@ -1,4 +1,5 @@
 {
+  outputs,
   config,
   lib,
   pkgs,
@@ -64,6 +65,9 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [
+    outputs.overlays.additions
+  ];
 
   # Shell settings
   programs.zsh = {
