@@ -5,11 +5,7 @@
   ...
 }: {
   imports = [
-    ./common/plasma-desktop
-    ./common/shell
-    ./common/email
-    ./common/programs
-    ./common/packages
+    ./common
     ./email/emily.nix
   ];
 
@@ -46,19 +42,6 @@
       source = ./wallpaper/lotte.png;
       target = ".wallpaper/wallpaper.png";
     };
-  };
-
-  systemd.user = {
-    # Nicely reload system units when changing configs
-    startServices = "sd-switch";
-    # Auto clean folders
-    tmpfiles.rules = let
-      home = config.home.homeDirectory;
-    in [
-      # Autoclean ~/Downloads
-      "d ${home}/Downloads - - - 14d -"
-      "d ${home}/tmp - - - 3d -"
-    ];
   };
 
   programs.git = {
