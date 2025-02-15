@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.zsh = {
     enable = true;
     plugins = [
@@ -30,8 +25,8 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-        "github"
         "isodate"
+        "git-commit"
       ];
     };
     # stuff for zoxide
