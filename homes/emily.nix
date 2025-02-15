@@ -63,9 +63,16 @@
   };
 
   programs.vscode = {
-    extensions = with pkgs.vscode-extensions; [
-      redhat.java
+    extensions = with pkgs.vscode-marketplace; [
+      #Java World
+      # TODO why on earth is this broken
+      # redhat.java
       vscjava.vscode-java-pack
+      vscjava.vscode-maven
+      vscjava.vscode-gradle
+      vscjava.vscode-java-test
+      vscjava.vscode-java-dependency
+      vscjava.vscode-java-debug
     ];
   };
 

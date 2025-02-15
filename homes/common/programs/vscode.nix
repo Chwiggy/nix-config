@@ -12,6 +12,8 @@
       #theming
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
+
+      #setup
       mkhl.direnv
 
       # nix world
@@ -38,18 +40,7 @@
 
       # rust world
       rust-lang.rust-analyzer
-      # TODO add again once https://nixpk.gs/pr-tracker.html?pr=380775 is through
-      # vadimcn.vscode-lldb
-
-      #Java World
-      # TODO why on earth is this broken
-      # redhat.java
-      vscjava.vscode-java-pack
-      vscjava.vscode-maven
-      vscjava.vscode-gradle
-      vscjava.vscode-java-test
-      vscjava.vscode-java-dependency
-      vscjava.vscode-java-debug
+      vadimcn.vscode-lldb
     ];
   };
 }
