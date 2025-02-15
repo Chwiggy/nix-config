@@ -57,6 +57,12 @@
     kitty
   ];
 
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    konsole
+    oxygen
+    plasma-browser-integration
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   # Shell settings

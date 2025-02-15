@@ -46,10 +46,6 @@
       source = ./wallpaper/lotte.png;
       target = ".wallpaper/wallpaper.png";
     };
-    "konsole-theme" = {
-      source = ./common/plasma-desktop/Catppuccin-Macchiato.colorscheme;
-      target = ".local/share/konsole/Catppuccin-Macchiato.colorscheme";
-    };
   };
 
   systemd.user = {
