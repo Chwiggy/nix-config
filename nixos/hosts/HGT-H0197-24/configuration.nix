@@ -7,6 +7,7 @@
   pkgsStable,
   lib,
   nix-vscode-extensions,
+  outputs,
   ...
 }: {
   imports = [

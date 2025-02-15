@@ -80,6 +80,7 @@
       # I want more computers to install nix on
       TGVSudEst = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/hosts/TGVSudEst/configuration.nix
           lix-module.nixosModules.default
@@ -103,6 +104,7 @@
 
       customISO = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {inherit inputs outputs;};
         modules = [
           "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
           "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
@@ -126,6 +128,7 @@
       };
       HGT-H0197-24 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/hosts/HGT-H0197-24/configuration.nix
           lix-module.nixosModules.default
