@@ -132,11 +132,6 @@
               ldflags = ["-X github.com/docker/compose/v2/internal.Version=${version}" "-s" "-w"];
             });
       };
-      # TODO watch for https://nixpk.gs/pr-tracker.html?pr=380775
-      # TODO how to fix for vscode extension too?
-      lldb = prev.lldb.overrideAttrs {
-        dontCheckForBrokenSymlinks = true;
-      };
     })
 
     nix-vscode-extensions.overlays.default
