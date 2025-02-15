@@ -5,6 +5,7 @@
   config,
   pkgs,
   lib,
+  nix-vscode-extensions,
   ...
 }: {
   imports = [
@@ -55,6 +56,10 @@
       "olm-3.2.16"
     ];
   };
+
+  nixpkgs.overlays = [
+    nix-vscode-extensions.overlays.default
+  ];
 
   environment.systemPackages = with pkgs; [
     # potential packages not in ../common/default.nix
