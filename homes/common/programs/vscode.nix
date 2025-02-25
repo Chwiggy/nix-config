@@ -22,7 +22,7 @@
       kamadorueda.alejandra
 
       # python world
-      charliermarsh.ruff
+      ms-python.vscode-pylance
       ms-python.python
       ms-python.debugpy
       ms-toolsai.jupyter
