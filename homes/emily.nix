@@ -54,7 +54,7 @@
   };
 
   programs.vscode = {
-    extensions = with pkgs.vscode-marketplace; [
+    profiles.default.extensions = with pkgs.vscode-marketplace; [
       #Java World
       # TODO why on earth is this broken
       # redhat.java
