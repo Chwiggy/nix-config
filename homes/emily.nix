@@ -5,7 +5,6 @@
   ...
 }: {
   imports = [
-    ./common
     ./email/emily.nix
   ];
 

@@ -92,6 +92,8 @@
             home-manager.sharedModules = [
               inputs.plasma-manager.homeManagerModules.plasma-manager
               outputs.homeManagerModules
+              ./homes/common
+              ./homes/hosts/TGVSudEst
             ];
             home-manager.users.lotte = import ./homes/lotte.nix;
 
@@ -118,6 +120,7 @@
             home-manager.sharedModules = [
               inputs.plasma-manager.homeManagerModules.plasma-manager
               outputs.homeManagerModules
+              ./homes/common
             ];
             home-manager.users.lotte = import ./homes/lotte.nix;
 
@@ -141,6 +144,8 @@
             home-manager.sharedModules = [
               inputs.plasma-manager.homeManagerModules.plasma-manager
               outputs.homeManagerModules
+              ./homes/common
+              ./homes/hosts/HGT-H0197-24
             ];
             home-manager.users.emily = import ./homes/emily.nix;
 
