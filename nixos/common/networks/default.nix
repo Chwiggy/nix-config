@@ -1,4 +1,7 @@
 {
+  imports = [
+    ./wifionice.nix
+  ];
   networking.networkmanager.ensureProfiles.profiles = {
     Keks = {
       connection = {
