@@ -8,7 +8,7 @@
     enable = true;
     package = pkgs.vscode;
     mutableExtensionsDir = false;
-    extensions = with pkgs.vscode-marketplace; [
+    profiles.default.extensions = with pkgs.vscode-marketplace; [
       #theming
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
