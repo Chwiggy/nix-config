@@ -1,11 +1,4 @@
 {
-  config,
-  lib,
-  pkgs,
-  inputs,
-  outputs,
-  ...
-}: {
   programs.plasma.powerdevil = {
     AC = {
       autoSuspend.action = "sleep";

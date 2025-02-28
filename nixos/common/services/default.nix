@@ -1,11 +1,4 @@
 {
-  inputs,
-  outputs,
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
   # List services that you want to enable:
   services = {
     # Enable the X11 windowing system.

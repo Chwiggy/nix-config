@@ -1,4 +1,4 @@
-{lib, ...}: {
+{
   programs.zellij = {
     # This autostarts zellij on zsh start
     # TODO find specific settings for vscode to avoid

@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  plasma-manager,
-  ...
-}: {
+{config, ...}: {
   imports = [
     ./plasma-desktop
     ./shell

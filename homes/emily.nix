@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  plasma-manager,
   ...
 }: {
   imports = [

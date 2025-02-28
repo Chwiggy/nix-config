@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  home-manager,
-  ...
-}: {
+{pkgs, ...}: {
   networking.networkmanager.ensureProfiles.profiles = {
     WIFIonICE = {
       connection = {

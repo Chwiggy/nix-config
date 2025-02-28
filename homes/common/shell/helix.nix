@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # TODO dig into theme and settings
   programs.helix = {
     enable = true;

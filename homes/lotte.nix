@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  plasma-manager,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./email/emily.nix
   ];
