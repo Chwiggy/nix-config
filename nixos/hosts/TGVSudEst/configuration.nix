@@ -48,14 +48,6 @@
     networkmanager.enable = true;
   };
 
-  # Allow unfree packages
-  nixpkgs.config = {
-    # TODO try again without in a few weeks
-    permittedInsecurePackages = [
-      "olm-3.2.16"
-    ];
-  };
-
   nixpkgs.overlays = [
     nix-vscode-extensions.overlays.default
   ];

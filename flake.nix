@@ -148,6 +148,7 @@
               ./homes/hosts/HGT-H0197-24
             ];
             home-manager.users.emily = import ./homes/emily.nix;
+            home-manager.users.lotte = import ./homes/lotte.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix

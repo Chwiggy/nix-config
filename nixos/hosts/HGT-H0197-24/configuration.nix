@@ -89,12 +89,21 @@
   security.pki.certificateFiles = [./KTSV_R1.crt];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.emily = {
-    isNormalUser = true;
-    initialPassword = "1235";
-    description = "Emily C. Wilke";
-    extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd" "docker"];
-    shell = pkgs.zsh;
+  users.users = {
+    emily = {
+      isNormalUser = true;
+      initialPassword = "1235";
+      description = "Emily C. Wilke";
+      extraGroups = ["sudo" "networkmanager" "wheel" "libvirtd" "docker"];
+      shell = pkgs.zsh;
+    };
+    lotte = {
+      isNormalUser = true;
+      initialPassword = "1235";
+      description = "Lotte";
+      extraGroups = ["sudo" "networkmanager" "wheel" "docker"];
+      shell = pkgs.zsh;
+    };
   };
 
   environment.systemPackages =

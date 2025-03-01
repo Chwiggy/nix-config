@@ -61,10 +61,17 @@
     plasma-browser-integration
   ];
 
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [
-    outputs.overlays.additions
-  ];
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "olm-3.2.16"
+      ];
+    };
+    overlays = [
+      outputs.overlays.additions
+    ];
+  };
 
   # Shell settings
   programs.zsh = {
