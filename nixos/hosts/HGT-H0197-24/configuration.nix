@@ -138,9 +138,19 @@
     '';
   };
 
-  services.printing.drivers = [
-    (pkgs.writeTextDir "share/cups/model/KOC750iGX.ppd" (builtins.readFile ./KOC750iGX.ppd))
-  ];
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+    ];
+  };
+
+  services = {
+    printing.drivers = [
+      (pkgs.writeTextDir "share/cups/model/KOC750iGX.ppd" (builtins.readFile ./KOC750iGX.ppd))
+    ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

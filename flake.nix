@@ -32,6 +32,9 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    envfs.url = "github:Mic92/envfs";
+    envfs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -44,6 +47,7 @@
     lix-module,
     lanzaboote,
     nix-vscode-extensions,
+    envfs,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -153,6 +157,7 @@
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
           }
+          envfs.nixosModules.envfs
           {_module.args = {inherit nix-vscode-extensions;};}
         ];
       };
