@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     # development tools
     direnv
-    kate
+    kdePackages.kate
     ruff
     nix-tree
     nix-diff
