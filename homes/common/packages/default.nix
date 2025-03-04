@@ -44,5 +44,6 @@
     # utilities
     unzip
     inkscape
+    neofetch
   ];
 }
