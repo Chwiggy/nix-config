@@ -35,6 +35,8 @@
 
     envfs.url = "github:Mic92/envfs";
     envfs.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = {
@@ -48,6 +50,7 @@
     lanzaboote,
     nix-vscode-extensions,
     envfs,
+    nixos-hardware,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -89,6 +92,9 @@
           ./nixos/hosts/TGVSudEst/configuration.nix
           lix-module.nixosModules.default
           disko.nixosModules.disko
+          nixos-hardware.nixosModules.common-cpu-intel
+          nixos-hardware.nixosModules.common-pc-laptop
+          nixos-hardware.nixosModules.common-pc-ssd
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

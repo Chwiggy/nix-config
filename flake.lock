@@ -307,6 +307,22 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1740646007,
+        "narHash": "sha256-dMReDQobS3kqoiUCQIYI9c0imPXRZnBubX20yX/G5LE=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "009b764ac98a3602d41fc68072eeec5d24fc0e49",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1741010256,
@@ -413,6 +429,7 @@
         "lanzaboote": "lanzaboote",
         "lix-module": "lix-module",
         "nix-vscode-extensions": "nix-vscode-extensions",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable_2",
         "plasma-manager": "plasma-manager"
