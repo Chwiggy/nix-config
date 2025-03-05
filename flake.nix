@@ -147,6 +147,8 @@
           lix-module.nixosModules.default
           disko.nixosModules.disko
           lanzaboote.nixosModules.lanzaboote
+          nixos-hardware.nixosModules.lenovo-thinkpad-t14
+          nixos-hardware.nixosModules.common-cpu-intel
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
