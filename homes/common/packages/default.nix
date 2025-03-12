@@ -45,5 +45,6 @@
     unzip
     inkscape
     neofetch
+    rnv-cli-pkg
   ];
 }

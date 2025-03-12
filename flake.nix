@@ -37,6 +37,12 @@
     envfs.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    rnv-cli = {
+      type = "gitlab";
+      owner = "ada.loveless";
+      repo = "rnv";
+    };
   };
 
   outputs = {
@@ -51,6 +57,7 @@
     nix-vscode-extensions,
     envfs,
     nixos-hardware,
+    rnv-cli,
     ...
   } @ inputs: let
     inherit (self) outputs;

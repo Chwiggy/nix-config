@@ -371,6 +371,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1741600792,
+        "narHash": "sha256-yfDy6chHcM7pXpMF4wycuuV+ILSTG486Z/vLx/Bdi6Y=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ebe2788eafd539477f83775ef93c3c7e244421d3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -421,6 +437,24 @@
         "type": "github"
       }
     },
+    "rnv-cli": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1741733371,
+        "narHash": "sha256-Yc9C/qPMYt1SxKQ6C7XE8uHhk10TULfmD71cr8VfDs4=",
+        "owner": "ada.loveless",
+        "repo": "rnv",
+        "rev": "6260ca05293d83f086428233733d19d082904234",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "ada.loveless",
+        "repo": "rnv",
+        "type": "gitlab"
+      }
+    },
     "root": {
       "inputs": {
         "disko": "disko",
@@ -432,7 +466,8 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable_2",
-        "plasma-manager": "plasma-manager"
+        "plasma-manager": "plasma-manager",
+        "rnv-cli": "rnv-cli"
       }
     },
     "rust-overlay": {

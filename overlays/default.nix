@@ -25,6 +25,7 @@
     #           ldflags = ["-X github.com/docker/compose/v2/internal.Version=${version}" "-s" "-w"];
     #         });
     #   };
+    rnv-cli-pkg = inputs.rnv-cli.packages.${prev.system}.default;
   };
 
   additions = final: _prev:
