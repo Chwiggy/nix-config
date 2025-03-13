@@ -6,5 +6,8 @@
         isDefault = true;
       };
     };
+    settings = {
+      "privacy.donottrackheader.enabled" = true;
+    };
   };
 }
