@@ -30,38 +30,6 @@
         wep-key-flags = "1";
       };
     };
-    eduroam = {
-      "802-1x" = {
-        anonymous-identity = "eduroamHDcat2024@uni-heidelberg.de";
-        ca-cert = "/home/lotte/.config/cat_installer/ca.pem";
-        eap = "peap;";
-        identity = "dg254@uni-heidelberg.de";
-        password-flags = "1";
-        phase2-auth = "mschapv2";
-      };
-      connection = {
-        id = "eduroam";
-        interface-name = "wlp0s20f3";
-        type = "wifi";
-        uuid = "5978a2fd-435e-485a-97e4-2bbd96786ae5";
-      };
-      ipv4 = {
-        method = "auto";
-      };
-      ipv6 = {
-        addr-gen-mode = "stable-privacy";
-        method = "auto";
-      };
-      proxy = {};
-      wifi = {
-        mode = "infrastructure";
-        ssid = "eduroam";
-      };
-      wifi-security = {
-        auth-alg = "open";
-        key-mgmt = "wpa-eap";
-      };
-    };
     "eduroam (real)" = {
       connection = {
         id = "eduroam (real)";
