@@ -1,6 +1,7 @@
 {
   outputs,
   pkgs,
+  nix-vscode-extensions,
   ...
 }: {
   imports = [
@@ -70,6 +71,8 @@
     };
     overlays = [
       outputs.overlays.additions
+      outputs.overlays.modifications
+      nix-vscode-extensions.overlays.default
     ];
   };
 

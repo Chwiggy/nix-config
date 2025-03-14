@@ -5,8 +5,6 @@
   pkgs,
   pkgsStable,
   lib,
-  nix-vscode-extensions,
-  outputs,
   ...
 }: {
   imports = [
@@ -117,11 +115,6 @@
       # packages from stable go here:
       # docker-compose
     ]);
-
-  nixpkgs.overlays = [
-    outputs.overlays.modifications
-    nix-vscode-extensions.overlays.default
-  ];
 
   virtualisation.docker = {
     enable = true;

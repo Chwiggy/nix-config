@@ -4,7 +4,6 @@
 {
   pkgs,
   lib,
-  nix-vscode-extensions,
   ...
 }: {
   imports = [
@@ -47,10 +46,6 @@
     # Enable networking
     networkmanager.enable = true;
   };
-
-  nixpkgs.overlays = [
-    nix-vscode-extensions.overlays.default
-  ];
 
   environment.systemPackages = with pkgs; [
     # potential packages not in ../common/default.nix
