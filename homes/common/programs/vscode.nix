@@ -12,6 +12,9 @@
         #setup
         mkhl.direnv
 
+        # git stuff
+        eamodio.gitlens
+
         # nix world
         arrterian.nix-env-selector
         jnoortheen.nix-ide
