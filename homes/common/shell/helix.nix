@@ -82,6 +82,17 @@
           command = "nil";
         };
       };
+      grammars = {
+        grammar = [
+          {
+            name = "nix";
+            source = {
+              git = "https://github.com/nix-community/tree-sitter-nix";
+              rev = "v0.0.2";
+            };
+          }
+        ];
+      };
     };
   };
 }
