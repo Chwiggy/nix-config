@@ -43,7 +43,7 @@
           language-id = "typst";
           auto-format = false;
           file-types = ["typ"];
-          language-servers = ["typst-lsp"];
+          language-servers = with pkgs; ["${tinymist}/bin/tinymist"];
         }
         {
           name = "rust";
@@ -51,7 +51,7 @@
           auto-format = true;
           file-types = ["rs"];
           roots = ["Cargo.lock"];
-          language-servers = ["rust-analyzer"];
+          language-servers = with pkgs; ["${rust-analyzer}/bin/rust-analyzer"];
         }
         {
           name = "nix";
@@ -76,7 +76,7 @@
           command = "typst-lsp";
         };
         rust-analyzer = {
-          command = "rust-analyzer";
+          command = with pkgs; "${rust-analyzer}/bin/rust-analyzer";
         };
         nil = {
           command = "nil";
@@ -89,6 +89,13 @@
             source = {
               git = "https://github.com/nix-community/tree-sitter-nix";
               rev = "v0.0.2";
+            };
+          }
+          {
+            name = "rust";
+            source = {
+              git = "https://github.com/tree-sitter/tree-sitter-rust";
+              rev = "v0.23.2";
             };
           }
         ];
