@@ -30,7 +30,7 @@
       ];
     };
     # stuff for zoxide
-    initExtra = ''
+    initContent = ''
       eval "$(zoxide init --cmd cd zsh)"
       eval "$(zellij setup --generate-auto-start zsh)"
     '';

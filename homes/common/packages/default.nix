@@ -10,9 +10,9 @@
     # language servers and debuggers for helix
     # TODO think about language server setup
     tinymist
-    ruff-lsp
+    ruff
     rust-analyzer
-    rocmPackages.llvm.lldb
+    # rocmPackages.llvm.lldb
     nil
 
     # shell stuff
