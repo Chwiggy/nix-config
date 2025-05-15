@@ -110,6 +110,7 @@
       sbctl
       cacert
       networkmanager-openvpn
+      cifs-utils
     ])
     ++ (with pkgsStable; [
       # packages from stable go here:
@@ -128,6 +129,7 @@
     extraCommands = ''
       iptables -I INPUT 1 -s 172.16.0.0/12 -p tcp -d 172.17.0.1 -j ACCEPT
       iptables -I INPUT 2 -s 172.16.0.0/12 -p udp -d 172.17.0.1 -j ACCEPT
+      iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns
     '';
   };
 
@@ -143,6 +145,17 @@
     printing.drivers = [
       (pkgs.writeTextDir "share/cups/model/KOC750iGX.ppd" (builtins.readFile ./KOC750iGX.ppd))
     ];
+  };
+
+  # Note Disable this before install
+  # TODO figure out secrets management
+  fileSystems."/mnt/share" = {
+    device = "//vbwinfs01.villa-bosch.de/heigit";
+    fsType = "cifs";
+    options = let
+      # this line prevents hanging on network split
+      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+    in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
   };
 
   # This value determines the NixOS release from which the default
