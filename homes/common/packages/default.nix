@@ -25,7 +25,7 @@
 
     # work
     zotero
-    libreoffice
+    libreoffice-qt
     qgis
     networkmanager-openconnect
     thunderbird
