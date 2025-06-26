@@ -39,10 +39,10 @@
 
         # rust world
         rust-lang.rust-analyzer
-        vadimcn.vscode-lldb
       ]
       ++ (with pkgs.vscode-extensions; [
         ms-toolsai.jupyter
+        vadimcn.vscode-lldb
       ]);
   };
 }
