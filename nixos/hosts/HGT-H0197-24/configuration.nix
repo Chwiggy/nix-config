@@ -48,6 +48,9 @@
     # Enable networking
     networkmanager = {
       enable = true;
+      plugins = [
+        pkgs.networkmanager-openvpn
+      ];
       ensureProfiles.profiles = {
         KT-Gruppe = {
           connection = {
@@ -65,7 +68,7 @@
             ca-cert = "/etc/ssl/certs/KTSV_R1.pem";
             eap = "peap";
             phase2-auth = "mschapv2";
-            identity = "ewilke";
+            identity = "emily.wilke@heigit.org";
           };
           proxy = {};
           wifi-security = {
@@ -109,7 +112,8 @@
       # potential packages not in ../common/default.nix
       sbctl
       cacert
-      networkmanager-openvpn
+      # networkmanager-openvpn
+      # openvpn3
       cifs-utils
     ])
     ++ (with pkgsStable; [
@@ -149,14 +153,15 @@
 
   # Note Disable this before install
   # TODO figure out secrets management
-  fileSystems."/mnt/share" = {
-    device = "//vbwinfs01.villa-bosch.de/heigit";
-    fsType = "cifs";
-    options = let
-      # this line prevents hanging on network split
-      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-    in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
-  };
+  # TODO running into mount.cifs -13 error with this no solution found so far
+  # fileSystems."/mnt/share" = {
+  #   device = "//vbwinfs01.villa-bosch.de/heigit";
+  #   fsType = "cifs";
+  #   options = let
+  #     # this line prevents hanging on network split
+  #     automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+  #   in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -10,7 +10,7 @@
       };
       realName = "Emily C. Wilke";
       address = "Emily.Wilke@heigit.org";
-      userName = "ewilke";
+      userName = "emily.wilke@heigit.org";
       imap = {
         host = "webmail.villa-bosch.de";
         port = 993;
