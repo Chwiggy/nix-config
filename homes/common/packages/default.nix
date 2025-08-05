@@ -19,6 +19,7 @@
     zellij
     helix
     zoxide
+    comma
 
     # entertainment
     tidal-hifi
