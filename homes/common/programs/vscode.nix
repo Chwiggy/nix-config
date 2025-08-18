@@ -12,9 +12,6 @@
         #setup
         mkhl.direnv
 
-        # git stuff
-        eamodio.gitlens
-
         # nix world
         arrterian.nix-env-selector
         jnoortheen.nix-ide
@@ -43,6 +40,9 @@
       ++ (with pkgs.vscode-extensions; [
         ms-toolsai.jupyter
         vadimcn.vscode-lldb
+
+        # git stuff
+        eamodio.gitlens
       ]);
   };
 }
