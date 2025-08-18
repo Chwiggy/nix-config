@@ -14,7 +14,7 @@
 
   #nix configurations
   nix = {
-    package = pkgs.nixVersions.stable;
+    package = pkgs.lix;
     #extraOptions = ''
     #  experimental-features = nix-command flakes
     #'';
@@ -64,6 +64,7 @@
 
   nixpkgs = {
     config = {
+      # TODO try and remove
       allowUnfree = true;
       permittedInsecurePackages = [
         "olm-3.2.16"

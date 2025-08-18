@@ -15,11 +15,8 @@
     scribus
     gimp
     wl-color-picker
-    # TODO affinity-crimes
-    #wine
 
     # messaging apps
-    #discord
     webcord
     nheko
     signal-desktop

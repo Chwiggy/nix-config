@@ -55,8 +55,7 @@
   programs.vscode = {
     profiles.default.extensions = with pkgs.vscode-marketplace; [
       #Java World
-      # TODO why on earth is this broken
-      # redhat.java
+      redhat.java
       vscjava.vscode-java-pack
       vscjava.vscode-maven
       vscjava.vscode-gradle

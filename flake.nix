@@ -22,12 +22,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    # Lix
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3-1.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,7 +46,6 @@
     home-manager,
     plasma-manager,
     disko,
-    lix-module,
     lanzaboote,
     nix-vscode-extensions,
     envfs,
@@ -97,7 +90,6 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/hosts/TGVSudEst/configuration.nix
-          lix-module.nixosModules.default
           disko.nixosModules.disko
           nixos-hardware.nixosModules.common-cpu-intel
           nixos-hardware.nixosModules.common-pc-laptop
@@ -129,7 +121,6 @@
           "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
           disko.nixosModules.disko
           ./nixos/hosts/customISO/configuration.nix
-          lix-module.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -151,7 +142,6 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/hosts/HGT-H0197-24/configuration.nix
-          lix-module.nixosModules.default
           disko.nixosModules.disko
           lanzaboote.nixosModules.lanzaboote
           nixos-hardware.nixosModules.lenovo-thinkpad-t14
