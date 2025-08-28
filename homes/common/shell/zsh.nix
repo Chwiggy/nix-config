@@ -18,7 +18,11 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    shellAliases.ll = "ls -l";
+    shellAliases = {
+      ll = "ls -l";
+      "code" = "codium";
+    };
+
     historySubstringSearch.enable = true;
     history.size = 10000;
 
