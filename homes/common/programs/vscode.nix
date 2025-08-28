@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
+    package = pkgs.vscodium;
     mutableExtensionsDir = false;
     profiles.default.extensions = with pkgs.vscode-marketplace;
       [

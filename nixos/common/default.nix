@@ -52,7 +52,6 @@
     bat
     wayland
     nix-output-monitor
-    vscode
     kitty
   ];
 
