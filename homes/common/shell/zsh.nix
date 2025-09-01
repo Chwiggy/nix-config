@@ -20,7 +20,6 @@
 
     shellAliases = {
       ll = "ls -l";
-      "code" = "codium";
     };
 
     historySubstringSearch.enable = true;
