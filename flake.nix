@@ -144,8 +144,8 @@
           ./nixos/hosts/HGT-H0197-24/configuration.nix
           disko.nixosModules.disko
           lanzaboote.nixosModules.lanzaboote
-          nixos-hardware.nixosModules.lenovo-thinkpad-t14
-          nixos-hardware.nixosModules.common-cpu-intel
+          nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen6
+          { services.fprintd.enable = false; }
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
